@@ -1,0 +1,701 @@
+[00:17:34] ### inicio: 10 escenarios × 5 repeticiones (EXP-1, EXP-2, EXP-3) quick=False
+[00:17:34] == EXP-1/falla-despachador/tactica/rep1  inicio
+[00:17:59]    evento generador_inicia {'gen_start_us': 1794547079436299}
+[00:18:59]    evento monitor_inyecta_falla {'svc': 'despachador-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.507715}
+[00:19:00]    evento heartbeat_detecta_caida {'svc': 'despachador-2'}
+[00:19:00]    evento heartbeat_relanza {'svc': 'despachador-2', 'ok': True, 'err': ''}
+[00:19:01]    evento heartbeat_instancia_viva {'svc': 'despachador-2', 'caida_s': 1.002558}
+[00:20:32]    evento generador_termina {}
+[00:20:42]    verificando…
+[00:20:51]    exportando tablas y logs…
+[00:20:55] == EXP-1/falla-despachador/tactica/rep1  ok=True 201.1s  enviadas=761599 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[00:20:55] == EXP-1/falla-despachador/base/rep1  inicio
+[00:21:06]    evento generador_inicia {'gen_start_us': 1794547266013774}
+[00:22:06]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.509684}
+[00:22:07]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[00:22:07]    evento heartbeat_relanza {'svc': 'despachador-1', 'ok': True, 'err': ''}
+[00:22:08]    evento heartbeat_instancia_viva {'svc': 'despachador-1', 'caida_s': 1.006838}
+[00:23:39]    evento generador_termina {}
+[00:23:48]    verificando…
+[00:23:57]    exportando tablas y logs…
+[00:24:00] == EXP-1/falla-despachador/base/rep1  ok=True 185.2s  enviadas=761596 perdidas=0 perdidas_panico=0 dup=23 fuera_orden=0
+[00:24:00] == EXP-1/falla-receptor/tactica/rep1  inicio
+[00:24:24]    evento generador_inicia {'gen_start_us': 1794547464865867}
+[00:25:25]    evento monitor_inyecta_falla {'svc': 'receptor-3', 'senal': 'SIGKILL', 'gen_elapsed': 60.50043}
+[00:25:25]    evento heartbeat_detecta_caida {'svc': 'receptor-3'}
+[00:25:26]    evento heartbeat_relanza {'svc': 'receptor-3', 'ok': True, 'err': ''}
+[00:25:26]    evento heartbeat_instancia_viva {'svc': 'receptor-3', 'caida_s': 1.008376}
+[00:26:58]    evento generador_termina {}
+[00:27:08]    verificando…
+[00:27:16]    exportando tablas y logs…
+[00:27:20] == EXP-1/falla-receptor/tactica/rep1  ok=True 200.1s  enviadas=761598 perdidas=0 perdidas_panico=0 dup=15 fuera_orden=0
+[00:27:20] == EXP-1/falla-receptor/base/rep1  inicio
+[00:27:31]    evento generador_inicia {'gen_start_us': 1794547651448742}
+[00:28:31]    evento monitor_inyecta_falla {'svc': 'receptor-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.500207}
+[00:28:32]    evento heartbeat_detecta_caida {'svc': 'receptor-1'}
+[00:28:32]    evento heartbeat_relanza {'svc': 'receptor-1', 'ok': True, 'err': ''}
+[00:28:33]    evento heartbeat_instancia_viva {'svc': 'receptor-1', 'caida_s': 1.001354}
+[00:30:04]    evento generador_termina {}
+[00:30:14]    verificando…
+[00:30:22]    exportando tablas y logs…
+[00:30:26] == EXP-1/falla-receptor/base/rep1  ok=True 185.5s  enviadas=761595 perdidas=120 perdidas_panico=5 dup=0 fuera_orden=0
+[00:30:26] == EXP-1/falla-broker/tactica/rep1  inicio
+[00:30:49]    evento generador_inicia {'gen_start_us': 1794547849308812}
+[00:31:49]    evento monitor_inyecta_falla {'svc': 'redpanda-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.500094}
+[00:31:50]    evento heartbeat_detecta_caida {'svc': 'redpanda-1'}
+[00:31:50]    evento heartbeat_relanza {'svc': 'redpanda-1', 'ok': True, 'err': ''}
+[00:31:51]    evento heartbeat_instancia_viva {'svc': 'redpanda-1', 'caida_s': 1.006374}
+[00:33:22]    evento generador_termina {}
+[00:33:33]    verificando…
+[00:33:41]    exportando tablas y logs…
+[00:33:45] == EXP-1/falla-broker/tactica/rep1  ok=True 199.2s  enviadas=761598 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[00:33:45] == EXP-1/falla-broker/base/rep1  inicio
+[00:33:55]    evento generador_inicia {'gen_start_us': 1794548034971181}
+[00:34:55]    evento monitor_inyecta_falla {'svc': 'redpanda-0', 'senal': 'SIGKILL', 'gen_elapsed': 60.50732}
+[00:34:56]    evento heartbeat_detecta_caida {'svc': 'redpanda-0'}
+[00:34:56]    evento heartbeat_relanza {'svc': 'redpanda-0', 'ok': True, 'err': ''}
+[00:34:57]    evento heartbeat_instancia_viva {'svc': 'redpanda-0', 'caida_s': 0.995991}
+[00:36:28]    evento generador_termina {}
+[00:36:37]    verificando…
+[00:36:45]    exportando tablas y logs…
+[00:36:48] == EXP-1/falla-broker/base/rep1  ok=True 183.6s  enviadas=761596 perdidas=0 perdidas_panico=0 dup=73 fuera_orden=0
+[00:36:48] == EXP-1/falla-despachador/tactica/rep2  inicio
+[00:37:14]    evento generador_inicia {'gen_start_us': 1794548234328970}
+[00:38:14]    evento monitor_inyecta_falla {'svc': 'despachador-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.500014}
+[00:38:15]    evento heartbeat_detecta_caida {'svc': 'despachador-2'}
+[00:38:15]    evento heartbeat_relanza {'svc': 'despachador-2', 'ok': True, 'err': ''}
+[00:38:16]    evento heartbeat_instancia_viva {'svc': 'despachador-2', 'caida_s': 1.00641}
+[00:39:48]    evento generador_termina {}
+[00:39:57]    verificando…
+[00:40:06]    exportando tablas y logs…
+[00:40:10] == EXP-1/falla-despachador/tactica/rep2  ok=True 201.3s  enviadas=761597 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[00:40:10] == EXP-1/falla-despachador/base/rep2  inicio
+[00:40:21]    evento generador_inicia {'gen_start_us': 1794548421220958}
+[00:41:21]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.507795}
+[00:41:22]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[00:41:22]    evento heartbeat_relanza {'svc': 'despachador-1', 'ok': True, 'err': ''}
+[00:41:23]    evento heartbeat_instancia_viva {'svc': 'despachador-1', 'caida_s': 1.008976}
+[00:42:54]    evento generador_termina {}
+[00:43:03]    verificando…
+[00:43:12]    exportando tablas y logs…
+[00:43:15] == EXP-1/falla-despachador/base/rep2  ok=True 185.2s  enviadas=761596 perdidas=0 perdidas_panico=0 dup=19 fuera_orden=0
+[00:43:15] == EXP-1/falla-receptor/tactica/rep2  inicio
+[00:43:39]    evento generador_inicia {'gen_start_us': 1794548619041345}
+[00:44:39]    evento monitor_inyecta_falla {'svc': 'receptor-3', 'senal': 'SIGKILL', 'gen_elapsed': 60.500486}
+[00:44:40]    evento heartbeat_detecta_caida {'svc': 'receptor-3'}
+[00:44:40]    evento heartbeat_relanza {'svc': 'receptor-3', 'ok': True, 'err': ''}
+[00:44:41]    evento heartbeat_instancia_viva {'svc': 'receptor-3', 'caida_s': 1.013029}
+[00:46:13]    evento generador_termina {}
+[00:46:22]    verificando…
+[00:46:30]    exportando tablas y logs…
+[00:46:34] == EXP-1/falla-receptor/tactica/rep2  ok=True 199.6s  enviadas=761598 perdidas=0 perdidas_panico=0 dup=17 fuera_orden=0
+[00:46:34] == EXP-1/falla-receptor/base/rep2  inicio
+[00:46:43]    evento generador_inicia {'gen_start_us': 1794548803524483}
+[00:47:44]    evento monitor_inyecta_falla {'svc': 'receptor-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.501387}
+[00:47:44]    evento heartbeat_detecta_caida {'svc': 'receptor-1'}
+[00:47:44]    evento heartbeat_relanza {'svc': 'receptor-1', 'ok': True, 'err': ''}
+[00:47:45]    evento heartbeat_instancia_viva {'svc': 'receptor-1', 'caida_s': 0.997023}
+[00:49:16]    evento generador_termina {}
+[00:49:27]    verificando…
+[00:49:35]    exportando tablas y logs…
+[00:49:38] == EXP-1/falla-receptor/base/rep2  ok=True 183.4s  enviadas=761598 perdidas=15 perdidas_panico=0 dup=0 fuera_orden=0
+[00:49:38] == EXP-1/falla-broker/tactica/rep2  inicio
+[00:50:01]    evento generador_inicia {'gen_start_us': 1794549001820210}
+[00:51:02]    evento monitor_inyecta_falla {'svc': 'redpanda-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.500293}
+[00:51:02]    evento heartbeat_detecta_caida {'svc': 'redpanda-2'}
+[00:51:02]    evento heartbeat_relanza {'svc': 'redpanda-2', 'ok': True, 'err': ''}
+[00:51:03]    evento heartbeat_instancia_viva {'svc': 'redpanda-2', 'caida_s': 1.014133}
+[00:52:35]    evento generador_termina {}
+[00:52:45]    verificando…
+[00:52:53]    exportando tablas y logs…
+[00:52:57] == EXP-1/falla-broker/tactica/rep2  ok=True 199.5s  enviadas=761597 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[00:52:57] == EXP-1/falla-broker/base/rep2  inicio
+[00:53:08]    evento generador_inicia {'gen_start_us': 1794549188521118}
+[00:54:09]    evento monitor_inyecta_falla {'svc': 'redpanda-0', 'senal': 'SIGKILL', 'gen_elapsed': 60.508445}
+[00:54:09]    evento heartbeat_detecta_caida {'svc': 'redpanda-0'}
+[00:54:09]    evento heartbeat_relanza {'svc': 'redpanda-0', 'ok': True, 'err': ''}
+[00:54:10]    evento heartbeat_instancia_viva {'svc': 'redpanda-0', 'caida_s': 0.997757}
+[00:55:41]    evento generador_termina {}
+[00:55:51]    verificando…
+[00:55:59]    exportando tablas y logs…
+[00:56:02] == EXP-1/falla-broker/base/rep2  ok=True 184.5s  enviadas=761598 perdidas=0 perdidas_panico=0 dup=91 fuera_orden=0
+[00:56:02] == EXP-1/falla-despachador/tactica/rep3  inicio
+[00:56:27]    evento generador_inicia {'gen_start_us': 1794549387740315}
+[00:57:28]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.501653}
+[00:57:28]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[00:57:28]    evento heartbeat_relanza {'svc': 'despachador-1', 'ok': True, 'err': ''}
+[00:57:29]    evento heartbeat_instancia_viva {'svc': 'despachador-1', 'caida_s': 1.001903}
+[00:59:00]    evento generador_termina {}
+[00:59:11]    verificando…
+[00:59:19]    exportando tablas y logs…
+[00:59:23] == EXP-1/falla-despachador/tactica/rep3  ok=True 201.1s  enviadas=761597 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[00:59:23] == EXP-1/falla-despachador/base/rep3  inicio
+[00:59:34]    evento generador_inicia {'gen_start_us': 1794549574049709}
+[01:00:34]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.501601}
+[01:00:35]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[01:00:35]    evento heartbeat_relanza {'svc': 'despachador-1', 'ok': True, 'err': ''}
+[01:00:36]    evento heartbeat_instancia_viva {'svc': 'despachador-1', 'caida_s': 1.004545}
+[01:02:07]    evento generador_termina {}
+[01:02:16]    verificando…
+[01:02:24]    exportando tablas y logs…
+[01:02:27] == EXP-1/falla-despachador/base/rep3  ok=True 184.6s  enviadas=761598 perdidas=0 perdidas_panico=0 dup=26 fuera_orden=0
+[01:02:27] == EXP-1/falla-receptor/tactica/rep3  inicio
+[01:02:50]    evento generador_inicia {'gen_start_us': 1794549770395171}
+[01:03:50]    evento monitor_inyecta_falla {'svc': 'receptor-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.500565}
+[01:03:51]    evento heartbeat_detecta_caida {'svc': 'receptor-1'}
+[01:03:51]    evento heartbeat_relanza {'svc': 'receptor-1', 'ok': True, 'err': ''}
+[01:03:52]    evento heartbeat_instancia_viva {'svc': 'receptor-1', 'caida_s': 1.004146}
+[01:05:24]    evento generador_termina {}
+[01:05:34]    verificando…
+[01:05:42]    exportando tablas y logs…
+[01:05:46] == EXP-1/falla-receptor/tactica/rep3  ok=True 198.7s  enviadas=761600 perdidas=0 perdidas_panico=0 dup=5 fuera_orden=0
+[01:05:46] == EXP-1/falla-receptor/base/rep3  inicio
+[01:05:57]    evento generador_inicia {'gen_start_us': 1794549957369224}
+[01:06:57]    evento monitor_inyecta_falla {'svc': 'receptor-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.501324}
+[01:06:58]    evento heartbeat_detecta_caida {'svc': 'receptor-1'}
+[01:06:58]    evento heartbeat_relanza {'svc': 'receptor-1', 'ok': True, 'err': ''}
+[01:06:59]    evento heartbeat_instancia_viva {'svc': 'receptor-1', 'caida_s': 0.984777}
+[01:08:30]    evento generador_termina {}
+[01:08:41]    verificando…
+[01:08:49]    exportando tablas y logs…
+[01:08:52] == EXP-1/falla-receptor/base/rep3  ok=True 186.1s  enviadas=761599 perdidas=145 perdidas_panico=10 dup=0 fuera_orden=0
+[01:08:52] == EXP-1/falla-broker/tactica/rep3  inicio
+[01:09:14]    evento generador_inicia {'gen_start_us': 1794550154285888}
+[01:10:14]    evento monitor_inyecta_falla {'svc': 'redpanda-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.502319}
+[01:10:15]    evento heartbeat_detecta_caida {'svc': 'redpanda-1'}
+[01:10:15]    evento heartbeat_relanza {'svc': 'redpanda-1', 'ok': True, 'err': ''}
+[01:10:16]    evento heartbeat_instancia_viva {'svc': 'redpanda-1', 'caida_s': 1.001437}
+[01:11:48]    evento generador_termina {}
+[01:11:57]    verificando…
+[01:12:05]    exportando tablas y logs…
+[01:12:10] == EXP-1/falla-broker/tactica/rep3  ok=True 197.7s  enviadas=761597 perdidas=2 perdidas_panico=0 dup=3 fuera_orden=0
+[01:12:10] == EXP-1/falla-broker/base/rep3  inicio
+[01:12:21]    evento generador_inicia {'gen_start_us': 1794550341105798}
+[01:13:21]    evento monitor_inyecta_falla {'svc': 'redpanda-0', 'senal': 'SIGKILL', 'gen_elapsed': 60.509208}
+[01:13:22]    evento heartbeat_detecta_caida {'svc': 'redpanda-0'}
+[01:13:22]    evento heartbeat_relanza {'svc': 'redpanda-0', 'ok': True, 'err': ''}
+[01:13:23]    evento heartbeat_instancia_viva {'svc': 'redpanda-0', 'caida_s': 1.006148}
+[01:14:54]    evento generador_termina {}
+[01:15:03]    verificando…
+[01:15:11]    exportando tablas y logs…
+[01:15:15] == EXP-1/falla-broker/base/rep3  ok=True 184.6s  enviadas=761598 perdidas=0 perdidas_panico=0 dup=95 fuera_orden=0
+[01:15:15] == EXP-1/falla-despachador/tactica/rep4  inicio
+[01:15:38]    evento generador_inicia {'gen_start_us': 1794550538718422}
+[01:16:39]    evento monitor_inyecta_falla {'svc': 'despachador-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.504186}
+[01:16:39]    evento heartbeat_detecta_caida {'svc': 'despachador-2'}
+[01:16:39]    evento heartbeat_relanza {'svc': 'despachador-2', 'ok': True, 'err': ''}
+[01:16:40]    evento heartbeat_instancia_viva {'svc': 'despachador-2', 'caida_s': 1.005878}
+[01:18:11]    evento generador_termina {}
+[01:18:22]    verificando…
+[01:18:30]    exportando tablas y logs…
+[01:18:34] == EXP-1/falla-despachador/tactica/rep4  ok=True 199.7s  enviadas=761598 perdidas=0 perdidas_panico=0 dup=1 fuera_orden=0
+[01:18:34] == EXP-1/falla-despachador/base/rep4  inicio
+[01:18:45]    evento generador_inicia {'gen_start_us': 1794550725534617}
+[01:19:46]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.506959}
+[01:19:46]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[01:19:46]    evento heartbeat_relanza {'svc': 'despachador-1', 'ok': True, 'err': ''}
+[01:19:47]    evento heartbeat_instancia_viva {'svc': 'despachador-1', 'caida_s': 1.00184}
+[01:21:18]    evento generador_termina {}
+[01:21:28]    verificando…
+[01:21:36]    exportando tablas y logs…
+[01:21:39] == EXP-1/falla-despachador/base/rep4  ok=True 184.7s  enviadas=761597 perdidas=0 perdidas_panico=0 dup=18 fuera_orden=0
+[01:21:39] == EXP-1/falla-receptor/tactica/rep4  inicio
+[01:22:00]    evento generador_inicia {'gen_start_us': 1794550919975376}
+[01:23:00]    evento monitor_inyecta_falla {'svc': 'receptor-3', 'senal': 'SIGKILL', 'gen_elapsed': 60.500628}
+[01:23:01]    evento heartbeat_detecta_caida {'svc': 'receptor-3'}
+[01:23:01]    evento heartbeat_relanza {'svc': 'receptor-3', 'ok': True, 'err': ''}
+[01:23:02]    evento heartbeat_instancia_viva {'svc': 'receptor-3', 'caida_s': 1.006737}
+[01:24:33]    evento generador_termina {}
+[01:24:43]    verificando…
+[01:24:52]    exportando tablas y logs…
+[01:24:55] == EXP-1/falla-receptor/tactica/rep4  ok=True 196.5s  enviadas=761598 perdidas=0 perdidas_panico=0 dup=16 fuera_orden=0
+[01:24:55] == EXP-1/falla-receptor/base/rep4  inicio
+[01:25:04]    evento generador_inicia {'gen_start_us': 1794551104622665}
+[01:26:05]    evento monitor_inyecta_falla {'svc': 'receptor-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.507073}
+[01:26:05]    evento heartbeat_detecta_caida {'svc': 'receptor-1'}
+[01:26:05]    evento heartbeat_relanza {'svc': 'receptor-1', 'ok': True, 'err': ''}
+[01:26:06]    evento heartbeat_instancia_viva {'svc': 'receptor-1', 'caida_s': 0.996248}
+[01:27:38]    evento generador_termina {}
+[01:27:47]    verificando…
+[01:27:55]    exportando tablas y logs…
+[01:27:58] == EXP-1/falla-receptor/base/rep4  ok=True 182.6s  enviadas=761598 perdidas=178 perdidas_panico=8 dup=0 fuera_orden=0
+[01:27:58] == EXP-1/falla-broker/tactica/rep4  inicio
+[01:28:21]    evento generador_inicia {'gen_start_us': 1794551301365944}
+[01:29:21]    evento monitor_inyecta_falla {'svc': 'redpanda-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.500261}
+[01:29:22]    evento heartbeat_detecta_caida {'svc': 'redpanda-1'}
+[01:29:22]    evento heartbeat_relanza {'svc': 'redpanda-1', 'ok': True, 'err': ''}
+[01:29:23]    evento heartbeat_instancia_viva {'svc': 'redpanda-1', 'caida_s': 0.99979}
+[01:30:54]    evento generador_termina {}
+[01:31:04]    verificando…
+[01:31:13]    exportando tablas y logs…
+[01:31:16] == EXP-1/falla-broker/tactica/rep4  ok=True 198.2s  enviadas=761599 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[01:31:16] == EXP-1/falla-broker/base/rep4  inicio
+[01:31:27]    evento generador_inicia {'gen_start_us': 1794551487609387}
+[01:32:28]    evento monitor_inyecta_falla {'svc': 'redpanda-0', 'senal': 'SIGKILL', 'gen_elapsed': 60.503406}
+[01:32:28]    evento heartbeat_detecta_caida {'svc': 'redpanda-0'}
+[01:32:28]    evento heartbeat_relanza {'svc': 'redpanda-0', 'ok': True, 'err': ''}
+[01:32:29]    evento heartbeat_instancia_viva {'svc': 'redpanda-0', 'caida_s': 1.000365}
+[01:34:01]    evento generador_termina {}
+[01:34:10]    verificando…
+[01:34:18]    exportando tablas y logs…
+[01:34:21] == EXP-1/falla-broker/base/rep4  ok=True 185.1s  enviadas=761596 perdidas=0 perdidas_panico=0 dup=89 fuera_orden=0
+[01:34:21] == EXP-1/falla-despachador/tactica/rep5  inicio
+[01:34:47]    evento generador_inicia {'gen_start_us': 1794551687338335}
+[01:35:47]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.502125}
+[01:35:48]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[01:35:48]    evento heartbeat_relanza {'svc': 'despachador-1', 'ok': True, 'err': ''}
+[01:35:49]    evento heartbeat_instancia_viva {'svc': 'despachador-1', 'caida_s': 1.008288}
+[01:37:20]    evento generador_termina {}
+[01:37:30]    verificando…
+[01:37:39]    exportando tablas y logs…
+[01:37:43] == EXP-1/falla-despachador/tactica/rep5  ok=True 201.3s  enviadas=761598 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[01:37:43] == EXP-1/falla-despachador/base/rep5  inicio
+[01:37:52]    evento generador_inicia {'gen_start_us': 1794551872862589}
+[01:38:53]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.502675}
+[01:38:53]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[01:38:54]    evento heartbeat_relanza {'svc': 'despachador-1', 'ok': True, 'err': ''}
+[01:38:54]    evento heartbeat_instancia_viva {'svc': 'despachador-1', 'caida_s': 0.996045}
+[01:40:26]    evento generador_termina {}
+[01:40:35]    verificando…
+[01:40:43]    exportando tablas y logs…
+[01:40:46] == EXP-1/falla-despachador/base/rep5  ok=True 183.5s  enviadas=761596 perdidas=0 perdidas_panico=0 dup=42 fuera_orden=0
+[01:40:46] == EXP-1/falla-receptor/tactica/rep5  inicio
+[01:41:08]    evento generador_inicia {'gen_start_us': 1794552068180756}
+[01:42:08]    evento monitor_inyecta_falla {'svc': 'receptor-3', 'senal': 'SIGKILL', 'gen_elapsed': 60.500747}
+[01:42:09]    evento heartbeat_detecta_caida {'svc': 'receptor-3'}
+[01:42:09]    evento heartbeat_relanza {'svc': 'receptor-3', 'ok': True, 'err': ''}
+[01:42:10]    evento heartbeat_instancia_viva {'svc': 'receptor-3', 'caida_s': 1.021187}
+[01:43:41]    evento generador_termina {}
+[01:43:51]    verificando…
+[01:43:59]    exportando tablas y logs…
+[01:44:04] == EXP-1/falla-receptor/tactica/rep5  ok=True 197.9s  enviadas=761598 perdidas=0 perdidas_panico=0 dup=8 fuera_orden=0
+[01:44:04] == EXP-1/falla-receptor/base/rep5  inicio
+[01:44:15]    evento generador_inicia {'gen_start_us': 1794552255306849}
+[01:45:15]    evento monitor_inyecta_falla {'svc': 'receptor-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.506319}
+[01:45:16]    evento heartbeat_detecta_caida {'svc': 'receptor-1'}
+[01:45:16]    evento heartbeat_relanza {'svc': 'receptor-1', 'ok': True, 'err': ''}
+[01:45:17]    evento heartbeat_instancia_viva {'svc': 'receptor-1', 'caida_s': 0.997085}
+[01:46:48]    evento generador_termina {}
+[01:46:58]    verificando…
+[01:47:06]    exportando tablas y logs…
+[01:47:09] == EXP-1/falla-receptor/base/rep5  ok=True 184.6s  enviadas=761599 perdidas=187 perdidas_panico=7 dup=0 fuera_orden=0
+[01:47:09] == EXP-1/falla-broker/tactica/rep5  inicio
+[01:47:33]    evento generador_inicia {'gen_start_us': 1794552453924696}
+[01:48:34]    evento monitor_inyecta_falla {'svc': 'redpanda-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.50843}
+[01:48:35]    evento heartbeat_detecta_caida {'svc': 'redpanda-1'}
+[01:48:35]    evento heartbeat_relanza {'svc': 'redpanda-1', 'ok': True, 'err': ''}
+[01:48:36]    evento heartbeat_instancia_viva {'svc': 'redpanda-1', 'caida_s': 1.007757}
+[01:50:08]    evento generador_termina {}
+[01:50:17]    verificando…
+[01:50:25]    exportando tablas y logs…
+[01:50:30] == EXP-1/falla-broker/tactica/rep5  ok=True 200.9s  enviadas=761596 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[01:50:30] == EXP-1/falla-broker/base/rep5  inicio
+[01:50:40]    evento generador_inicia {'gen_start_us': 1794552640762454}
+[01:51:41]    evento monitor_inyecta_falla {'svc': 'redpanda-0', 'senal': 'SIGKILL', 'gen_elapsed': 60.508327}
+[01:51:41]    evento heartbeat_detecta_caida {'svc': 'redpanda-0'}
+[01:51:41]    evento heartbeat_relanza {'svc': 'redpanda-0', 'ok': True, 'err': ''}
+[01:51:42]    evento heartbeat_instancia_viva {'svc': 'redpanda-0', 'caida_s': 0.990074}
+[01:53:14]    evento generador_termina {}
+[01:53:23]    verificando…
+[01:53:32]    exportando tablas y logs…
+[01:53:35] == EXP-1/falla-broker/base/rep5  ok=True 185.0s  enviadas=761598 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[01:53:35] == EXP-2/pico/tactica/rep1  inicio
+[01:54:01]    evento generador_inicia {'gen_start_us': 1794552841466913}
+[02:00:35]    evento generador_termina {}
+[02:00:45]    verificando…
+[02:01:01]    exportando tablas y logs…
+[02:01:09] == EXP-2/pico/tactica/rep1  ok=True 454.3s  enviadas=1665804 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[02:01:09] == EXP-2/pico/base/rep1  inicio
+[02:01:26]    evento generador_inicia {'gen_start_us': 1794553286667188}
+[02:08:00]    evento generador_termina {}
+[02:08:10]    verificando…
+[02:08:20]    exportando tablas y logs…
+[02:08:26] == EXP-2/pico/base/rep1  ok=True 437.6s  enviadas=1665804 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[02:08:26] == EXP-2/pico/tactica/rep2  inicio
+[02:08:51]    evento generador_inicia {'gen_start_us': 1794553731504053}
+[02:15:24]    evento generador_termina {}
+[02:15:33]    verificando…
+[02:15:49]    exportando tablas y logs…
+[02:15:57] == EXP-2/pico/tactica/rep2  ok=True 450.5s  enviadas=1665800 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[02:15:57] == EXP-2/pico/base/rep2  inicio
+[02:16:18]    evento generador_inicia {'gen_start_us': 1794554178041112}
+[02:22:51]    evento generador_termina {}
+[02:23:01]    verificando…
+[02:23:12]    exportando tablas y logs…
+[02:23:21] == EXP-2/pico/base/rep2  ok=True 443.8s  enviadas=1665799 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[02:23:21] == EXP-2/pico/tactica/rep3  inicio
+[02:23:47]    evento generador_inicia {'gen_start_us': 1794554627596663}
+[02:30:21]    evento generador_termina {}
+[02:30:31]    verificando…
+[02:30:47]    exportando tablas y logs…
+[02:30:56] == EXP-2/pico/tactica/rep3  ok=True 455.4s  enviadas=1665800 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[02:30:56] == EXP-2/pico/base/rep3  inicio
+[02:31:18]    evento generador_inicia {'gen_start_us': 1794555078095459}
+[02:37:52]    evento generador_termina {}
+[02:38:01]    verificando…
+[02:38:12]    exportando tablas y logs…
+[02:38:20] == EXP-2/pico/base/rep3  ok=True 444.0s  enviadas=1665799 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[02:38:20] == EXP-2/pico/tactica/rep4  inicio
+[02:38:42]    evento generador_inicia {'gen_start_us': 1794555522543170}
+[02:45:16]    evento generador_termina {}
+[02:45:26]    verificando…
+[02:45:42]    exportando tablas y logs…
+[02:45:50] == EXP-2/pico/tactica/rep4  ok=True 449.7s  enviadas=1665798 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[02:45:50] == EXP-2/pico/base/rep4  inicio
+[02:46:08]    evento generador_inicia {'gen_start_us': 1794555968800113}
+[02:52:42]    evento generador_termina {}
+[02:52:52]    verificando…
+[02:53:03]    exportando tablas y logs…
+[02:53:10] == EXP-2/pico/base/rep4  ok=True 440.3s  enviadas=1665795 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[02:53:10] == EXP-2/pico/tactica/rep5  inicio
+[02:53:32]    evento generador_inicia {'gen_start_us': 1794556412865856}
+[03:00:07]    evento generador_termina {}
+[03:00:16]    verificando…
+[03:00:34]    exportando tablas y logs…
+[03:00:43] == EXP-2/pico/tactica/rep5  ok=True 452.6s  enviadas=1665800 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=2
+[03:00:43] == EXP-2/pico/base/rep5  inicio
+[03:01:01]    evento generador_inicia {'gen_start_us': 1794556861541994}
+[03:07:35]    evento generador_termina {}
+[03:07:44]    verificando…
+[03:07:56]    exportando tablas y logs…
+[03:08:05] == EXP-2/pico/base/rep5  ok=True 441.8s  enviadas=1665800 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[03:08:05] == EXP-3/pico/tactica/rep1  inicio
+[03:08:30]    evento generador_inicia {'gen_start_us': 1794557310727337}
+[03:15:02]    evento monitor_cola_normal_detiene_generador {'backlog': 7, 'gen_elapsed': 392.097245096}
+[03:15:07]    evento generador_termina {}
+[03:15:12]    verificando…
+[03:15:28]    exportando tablas y logs…
+[03:15:37] == EXP-3/pico/tactica/rep1  ok=True 452.7s  enviadas=1638151 perdidas=0 perdidas_panico=0 dup=170 fuera_orden=0
+[03:15:37] == EXP-3/pico/base/rep1  inicio
+[03:15:56]    evento generador_inicia {'gen_start_us': 1794557756165237}
+[03:31:30]    evento generador_termina {}
+[03:31:35]    verificando…
+[03:31:51]    exportando tablas y logs…
+[03:32:06] == EXP-3/pico/base/rep1  ok=True 988.4s  enviadas=2445000 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[03:32:06] == EXP-3/pico/tactica/rep2  inicio
+[03:32:28]    evento generador_inicia {'gen_start_us': 1794558748477493}
+[03:38:59]    evento monitor_cola_normal_detiene_generador {'backlog': 6, 'gen_elapsed': 390.860651012}
+[03:39:03]    evento generador_termina {}
+[03:39:10]    verificando…
+[03:39:26]    exportando tablas y logs…
+[03:39:34] == EXP-3/pico/tactica/rep2  ok=True 447.8s  enviadas=1636295 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[03:39:34] == EXP-3/pico/base/rep2  inicio
+[03:39:52]    evento generador_inicia {'gen_start_us': 1794559192449534}
+[03:55:25]    evento generador_termina {}
+[03:55:31]    verificando…
+[03:55:47]    exportando tablas y logs…
+[03:55:59] == EXP-3/pico/base/rep2  ok=True 985.4s  enviadas=2444999 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[03:55:59] == EXP-3/pico/tactica/rep3  inicio
+[03:56:21]    evento generador_inicia {'gen_start_us': 1794560181665637}
+[04:02:52]    evento monitor_cola_normal_detiene_generador {'backlog': 3, 'gen_elapsed': 390.76167376}
+[04:02:56]    evento generador_termina {}
+[04:03:02]    verificando…
+[04:03:18]    exportando tablas y logs…
+[04:03:26] == EXP-3/pico/tactica/rep3  ok=True 447.4s  enviadas=1636155 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[04:03:26] == EXP-3/pico/base/rep3  inicio
+[04:03:44]    evento generador_inicia {'gen_start_us': 1794560624261897}
+[04:19:17]    evento generador_termina {}
+[04:19:23]    verificando…
+[04:19:39]    exportando tablas y logs…
+[04:19:49] == EXP-3/pico/base/rep3  ok=True 983.0s  enviadas=2445003 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[04:19:49] == EXP-3/pico/tactica/rep4  inicio
+[04:20:13]    evento generador_inicia {'gen_start_us': 1794561613958749}
+[04:26:44]    evento monitor_cola_normal_detiene_generador {'backlog': 8, 'gen_elapsed': 390.856895218}
+[04:26:49]    evento generador_termina {}
+[04:26:55]    verificando…
+[04:27:11]    exportando tablas y logs…
+[04:27:19] == EXP-3/pico/tactica/rep4  ok=True 449.5s  enviadas=1636296 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[04:27:19] == EXP-3/pico/base/rep4  inicio
+[04:27:37]    evento generador_inicia {'gen_start_us': 1794562057577369}
+[04:43:11]    evento generador_termina {}
+[04:43:16]    verificando…
+[04:43:34]    exportando tablas y logs…
+[04:43:43] == EXP-3/pico/base/rep4  ok=True 984.5s  enviadas=2445000 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[04:43:43] == EXP-3/pico/tactica/rep5  inicio
+[04:44:09]    evento generador_inicia {'gen_start_us': 1794563049756693}
+[04:50:40]    evento monitor_cola_normal_detiene_generador {'backlog': 5, 'gen_elapsed': 390.89010122}
+[04:50:44]    evento generador_termina {}
+[04:50:51]    verificando…
+[04:51:07]    exportando tablas y logs…
+[04:51:15] == EXP-3/pico/tactica/rep5  ok=True 451.7s  enviadas=1636344 perdidas=0 perdidas_panico=0 dup=69 fuera_orden=0
+[04:51:15] == EXP-3/pico/base/rep5  inicio
+[04:51:34]    evento generador_inicia {'gen_start_us': 1794563494899849}
+[05:07:08]    evento generador_termina {}
+[05:07:14]    verificando…
+[05:07:29]    exportando tablas y logs…
+[05:07:41] == EXP-3/pico/base/rep5  ok=True 986.2s  enviadas=2444996 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[05:07:41] ### fin de todas las corridas
+[11:31:13] ### inicio: 5 escenarios × 5 repeticiones (EXP-1b, EXP-1c) quick=False
+[11:31:13] == EXP-1b/maquina-perdida-despachador/tactica/rep1  inicio
+[11:31:35]    evento generador_inicia {'gen_start_us': 1794587495790569}
+[11:32:36]    evento monitor_inyecta_falla {'svc': 'despachador-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.50004, 'maquina_perdida': True}
+[11:32:38]    evento heartbeat_detecta_caida {'svc': 'despachador-2'}
+[11:32:38]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'despachador-2'}
+[11:34:10]    evento generador_termina {}
+[11:34:16]    verificando…
+[11:34:33]    exportando tablas y logs…
+[11:34:42] == EXP-1b/maquina-perdida-despachador/tactica/rep1  ok=True 209.4s  enviadas=761599 perdidas=0 perdidas_panico=0 dup=2 fuera_orden=0
+[11:34:42] == EXP-1b/maquina-perdida-despachador/base/rep1  inicio
+[11:34:56]    evento generador_inicia {'gen_start_us': 1794587695994990}
+[11:35:56]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.50117, 'maquina_perdida': True}
+[11:35:56]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[11:35:56]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'despachador-1'}
+[11:37:29]    evento generador_termina {}
+[11:37:34]    verificando…
+[11:37:51]    exportando tablas y logs…
+[11:37:58] == EXP-1b/maquina-perdida-despachador/base/rep1  ok=True 196.0s  enviadas=761598 perdidas=7094 perdidas_panico=7094 dup=0 fuera_orden=0
+[11:37:58] == EXP-1b/maquina-perdida-broker/tactica/rep1  inicio
+[11:38:25]    evento generador_inicia {'gen_start_us': 1794587905399626}
+[11:39:25]    evento monitor_inyecta_falla {'svc': 'redpanda-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.500235, 'maquina_perdida': True}
+[11:39:27]    evento heartbeat_detecta_caida {'svc': 'redpanda-2'}
+[11:39:27]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'redpanda-2'}
+[11:40:59]    evento generador_termina {}
+[11:41:05]    verificando…
+[11:41:24]    exportando tablas y logs…
+[11:41:33] == EXP-1b/maquina-perdida-broker/tactica/rep1  ok=True 214.3s  enviadas=761596 perdidas=1 perdidas_panico=0 dup=308 fuera_orden=0
+[11:41:33] == EXP-1b/maquina-perdida-broker/base/rep1  inicio
+[11:41:43]    evento generador_inicia {'gen_start_us': 1794588103216448}
+[11:42:43]    evento monitor_inyecta_falla {'svc': 'redpanda-0', 'senal': 'SIGKILL', 'gen_elapsed': 60.503249, 'maquina_perdida': True}
+[11:42:44]    evento heartbeat_detecta_caida {'svc': 'redpanda-0'}
+[11:42:44]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'redpanda-0'}
+[11:44:16]    evento generador_termina {}
+[11:44:23]    verificando…
+[11:44:34]    exportando tablas y logs…
+[11:44:39] == EXP-1b/maquina-perdida-broker/base/rep1  ok=True 185.9s  enviadas=761600 perdidas=454559 perdidas_panico=7095 dup=0 fuera_orden=0
+[11:44:39] == EXP-1b/maquina-perdida-despachador/tactica/rep2  inicio
+[11:45:05]    evento generador_inicia {'gen_start_us': 1794588305490423}
+[11:46:05]    evento monitor_inyecta_falla {'svc': 'despachador-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.502728, 'maquina_perdida': True}
+[11:46:06]    evento heartbeat_detecta_caida {'svc': 'despachador-2'}
+[11:46:06]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'despachador-2'}
+[10:20:43] ### inicio: 5 escenarios × 5 repeticiones (EXP-1b, EXP-1c) quick=False
+[10:20:43] == EXP-1b/maquina-perdida-despachador/tactica/rep1  inicio
+[10:21:04]    evento generador_inicia {'gen_start_us': 1794669664772258}
+[10:22:05]    evento monitor_inyecta_falla {'svc': 'despachador-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.500153, 'maquina_perdida': True}
+[10:22:05]    evento heartbeat_detecta_caida {'svc': 'despachador-2'}
+[10:22:05]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'despachador-2'}
+[10:23:38]    evento generador_termina {}
+[10:23:45]    verificando…
+[10:24:00]    exportando tablas y logs…
+[10:24:08] == EXP-1b/maquina-perdida-despachador/tactica/rep1  ok=True 204.8s  enviadas=761597 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[10:24:08] == EXP-1b/maquina-perdida-despachador/base/rep1  inicio
+[10:24:17]    evento generador_inicia {'gen_start_us': 1794669857649628}
+[10:25:18]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.501982, 'maquina_perdida': True}
+[10:25:18]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[10:25:18]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'despachador-1'}
+[10:26:50]    evento generador_termina {}
+[10:26:56]    verificando…
+[10:27:12]    exportando tablas y logs…
+[10:27:17] == EXP-1b/maquina-perdida-despachador/base/rep1  ok=True 189.6s  enviadas=761595 perdidas=7098 perdidas_panico=7098 dup=0 fuera_orden=0
+[10:27:17] == EXP-1b/maquina-perdida-broker/tactica/rep1  inicio
+[10:27:38]    evento generador_inicia {'gen_start_us': 1794670058177498}
+[10:28:38]    evento monitor_inyecta_falla {'svc': 'redpanda-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.503641, 'maquina_perdida': True}
+[10:28:39]    evento heartbeat_detecta_caida {'svc': 'redpanda-2'}
+[10:28:39]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'redpanda-2'}
+[10:30:11]    evento generador_termina {}
+[10:30:17]    verificando…
+[10:30:33]    exportando tablas y logs…
+[10:30:40] == EXP-1b/maquina-perdida-broker/tactica/rep1  ok=True 203.2s  enviadas=761600 perdidas=1 perdidas_panico=0 dup=8 fuera_orden=0
+[10:30:40] == EXP-1b/maquina-perdida-broker/base/rep1  inicio
+[10:30:51]    evento generador_inicia {'gen_start_us': 1794670251222305}
+[10:31:51]    evento monitor_inyecta_falla {'svc': 'redpanda-0', 'senal': 'SIGKILL', 'gen_elapsed': 60.501372, 'maquina_perdida': True}
+[10:31:52]    evento heartbeat_detecta_caida {'svc': 'redpanda-0'}
+[10:31:52]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'redpanda-0'}
+[10:33:25]    evento generador_termina {}
+[10:33:30]    verificando…
+[10:33:42]    exportando tablas y logs…
+[10:33:45] == EXP-1b/maquina-perdida-broker/base/rep1  ok=True 184.9s  enviadas=761600 perdidas=454620 perdidas_panico=7100 dup=0 fuera_orden=0
+[10:33:45] == EXP-1b/maquina-perdida-despachador/tactica/rep2  inicio
+[10:34:07]    evento generador_inicia {'gen_start_us': 1794670447520008}
+[10:35:08]    evento monitor_inyecta_falla {'svc': 'despachador-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.500978, 'maquina_perdida': True}
+[10:35:08]    evento heartbeat_detecta_caida {'svc': 'despachador-2'}
+[10:35:08]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'despachador-2'}
+[10:36:41]    evento generador_termina {}
+[10:36:47]    verificando…
+[10:37:03]    exportando tablas y logs…
+[10:37:11] == EXP-1b/maquina-perdida-despachador/tactica/rep2  ok=True 206.2s  enviadas=761599 perdidas=0 perdidas_panico=0 dup=2 fuera_orden=0
+[10:37:11] == EXP-1b/maquina-perdida-despachador/base/rep2  inicio
+[10:37:22]    evento generador_inicia {'gen_start_us': 1794670642409866}
+[10:38:22]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.500544, 'maquina_perdida': True}
+[10:38:23]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[10:38:23]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'despachador-1'}
+[10:39:56]    evento generador_termina {}
+[10:40:02]    verificando…
+[10:40:18]    exportando tablas y logs…
+[10:40:24] == EXP-1b/maquina-perdida-despachador/base/rep2  ok=True 192.7s  enviadas=761600 perdidas=7193 perdidas_panico=7193 dup=0 fuera_orden=0
+[10:40:24] == EXP-1b/maquina-perdida-broker/tactica/rep2  inicio
+[10:40:49]    evento generador_inicia {'gen_start_us': 1794670849728085}
+[10:41:50]    evento monitor_inyecta_falla {'svc': 'redpanda-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.500281, 'maquina_perdida': True}
+[10:41:50]    evento heartbeat_detecta_caida {'svc': 'redpanda-2'}
+[10:41:50]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'redpanda-2'}
+[10:43:23]    evento generador_termina {}
+[10:43:30]    verificando…
+[10:43:45]    exportando tablas y logs…
+[10:43:52] == EXP-1b/maquina-perdida-broker/tactica/rep2  ok=True 208.2s  enviadas=761600 perdidas=0 perdidas_panico=0 dup=147 fuera_orden=0
+[10:43:52] == EXP-1b/maquina-perdida-broker/base/rep2  inicio
+[10:44:04]    evento generador_inicia {'gen_start_us': 1794671044206493}
+[10:45:04]    evento monitor_inyecta_falla {'svc': 'redpanda-0', 'senal': 'SIGKILL', 'gen_elapsed': 60.503048, 'maquina_perdida': True}
+[10:45:05]    evento heartbeat_detecta_caida {'svc': 'redpanda-0'}
+[10:45:05]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'redpanda-0'}
+[10:46:37]    evento generador_termina {}
+[10:46:43]    verificando…
+[10:46:53]    exportando tablas y logs…
+[10:46:57] == EXP-1b/maquina-perdida-broker/base/rep2  ok=True 184.2s  enviadas=761598 perdidas=454420 perdidas_panico=7095 dup=0 fuera_orden=0
+[10:46:57] == EXP-1b/maquina-perdida-despachador/tactica/rep3  inicio
+[10:47:19]    evento generador_inicia {'gen_start_us': 1794671239862520}
+[10:48:20]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.509737, 'maquina_perdida': True}
+[10:48:20]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[10:48:20]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'despachador-1'}
+[10:49:53]    evento generador_termina {}
+[10:50:00]    verificando…
+[10:50:16]    exportando tablas y logs…
+[10:50:23] == EXP-1b/maquina-perdida-despachador/tactica/rep3  ok=True 206.9s  enviadas=761599 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[10:50:23] == EXP-1b/maquina-perdida-despachador/base/rep3  inicio
+[10:50:33]    evento generador_inicia {'gen_start_us': 1794671433406493}
+[10:51:33]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.504988, 'maquina_perdida': True}
+[10:51:34]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[10:51:34]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'despachador-1'}
+[10:53:07]    evento generador_termina {}
+[10:53:12]    verificando…
+[10:53:28]    exportando tablas y logs…
+[10:53:34] == EXP-1b/maquina-perdida-despachador/base/rep3  ok=True 190.4s  enviadas=761597 perdidas=7164 perdidas_panico=7164 dup=0 fuera_orden=0
+[10:53:34] == EXP-1b/maquina-perdida-broker/tactica/rep3  inicio
+[10:53:56]    evento generador_inicia {'gen_start_us': 1794671636121596}
+[10:54:56]    evento monitor_inyecta_falla {'svc': 'redpanda-0', 'senal': 'SIGKILL', 'gen_elapsed': 60.500176, 'maquina_perdida': True}
+[10:54:57]    evento heartbeat_detecta_caida {'svc': 'redpanda-0'}
+[10:54:57]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'redpanda-0'}
+[10:56:29]    evento generador_termina {}
+[10:56:36]    verificando…
+[10:56:52]    exportando tablas y logs…
+[10:56:59] == EXP-1b/maquina-perdida-broker/tactica/rep3  ok=True 205.0s  enviadas=761594 perdidas=2 perdidas_panico=0 dup=386 fuera_orden=0
+[10:56:59] == EXP-1b/maquina-perdida-broker/base/rep3  inicio
+[10:57:09]    evento generador_inicia {'gen_start_us': 1794671829824487}
+[10:58:10]    evento monitor_inyecta_falla {'svc': 'redpanda-0', 'senal': 'SIGKILL', 'gen_elapsed': 60.501504, 'maquina_perdida': True}
+[10:58:10]    evento heartbeat_detecta_caida {'svc': 'redpanda-0'}
+[10:58:10]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'redpanda-0'}
+[10:59:43]    evento generador_termina {}
+[10:59:49]    verificando…
+[10:59:59]    exportando tablas y logs…
+[11:00:03] == EXP-1b/maquina-perdida-broker/base/rep3  ok=True 183.8s  enviadas=761597 perdidas=454523 perdidas_panico=7093 dup=0 fuera_orden=0
+[11:00:03] == EXP-1b/maquina-perdida-despachador/tactica/rep4  inicio
+[11:00:26]    evento generador_inicia {'gen_start_us': 1794672026117900}
+[11:01:26]    evento monitor_inyecta_falla {'svc': 'despachador-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.503736, 'maquina_perdida': True}
+[11:01:26]    evento heartbeat_detecta_caida {'svc': 'despachador-2'}
+[11:01:26]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'despachador-2'}
+[11:02:59]    evento generador_termina {}
+[11:03:06]    verificando…
+[11:03:22]    exportando tablas y logs…
+[11:03:31] == EXP-1b/maquina-perdida-despachador/tactica/rep4  ok=True 208.0s  enviadas=761598 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[11:03:31] == EXP-1b/maquina-perdida-despachador/base/rep4  inicio
+[11:03:42]    evento generador_inicia {'gen_start_us': 1794672222561332}
+[11:04:43]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.50109, 'maquina_perdida': True}
+[11:04:43]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[11:04:43]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'despachador-1'}
+[11:06:15]    evento generador_termina {}
+[11:06:21]    verificando…
+[11:06:37]    exportando tablas y logs…
+[11:06:43] == EXP-1b/maquina-perdida-despachador/base/rep4  ok=True 192.0s  enviadas=761599 perdidas=7134 perdidas_panico=7134 dup=0 fuera_orden=0
+[11:06:43] == EXP-1b/maquina-perdida-broker/tactica/rep4  inicio
+[11:07:04]    evento generador_inicia {'gen_start_us': 1794672424885189}
+[11:08:05]    evento monitor_inyecta_falla {'svc': 'redpanda-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.503681, 'maquina_perdida': True}
+[11:08:05]    evento heartbeat_detecta_caida {'svc': 'redpanda-2'}
+[11:08:05]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'redpanda-2'}
+[11:09:38]    evento generador_termina {}
+[11:09:45]    verificando…
+[11:10:01]    exportando tablas y logs…
+[11:10:09] == EXP-1b/maquina-perdida-broker/tactica/rep4  ok=True 206.0s  enviadas=761598 perdidas=1 perdidas_panico=0 dup=50 fuera_orden=0
+[11:10:09] == EXP-1b/maquina-perdida-broker/base/rep4  inicio
+[11:10:20]    evento generador_inicia {'gen_start_us': 1794672620559211}
+[11:11:21]    evento monitor_inyecta_falla {'svc': 'redpanda-0', 'senal': 'SIGKILL', 'gen_elapsed': 60.501977, 'maquina_perdida': True}
+[11:11:21]    evento heartbeat_detecta_caida {'svc': 'redpanda-0'}
+[11:11:21]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'redpanda-0'}
+[11:12:54]    evento generador_termina {}
+[11:12:59]    verificando…
+[11:13:11]    exportando tablas y logs…
+[11:13:14] == EXP-1b/maquina-perdida-broker/base/rep4  ok=True 185.6s  enviadas=761597 perdidas=454466 perdidas_panico=7101 dup=0 fuera_orden=0
+[11:13:14] == EXP-1b/maquina-perdida-despachador/tactica/rep5  inicio
+[11:13:36]    evento generador_inicia {'gen_start_us': 1794672816069990}
+[11:14:36]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.502395, 'maquina_perdida': True}
+[11:14:37]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[11:14:37]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'despachador-1'}
+[11:16:09]    evento generador_termina {}
+[11:16:15]    verificando…
+[11:16:30]    exportando tablas y logs…
+[11:16:39] == EXP-1b/maquina-perdida-despachador/tactica/rep5  ok=True 204.9s  enviadas=761600 perdidas=0 perdidas_panico=0 dup=1 fuera_orden=0
+[11:16:39] == EXP-1b/maquina-perdida-despachador/base/rep5  inicio
+[11:16:51]    evento generador_inicia {'gen_start_us': 1794673011194996}
+[11:17:51]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.500697, 'maquina_perdida': True}
+[11:17:52]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[11:17:52]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'despachador-1'}
+[11:19:24]    evento generador_termina {}
+[11:19:30]    verificando…
+[11:19:45]    exportando tablas y logs…
+[11:19:52] == EXP-1b/maquina-perdida-despachador/base/rep5  ok=True 193.4s  enviadas=761594 perdidas=7108 perdidas_panico=7108 dup=0 fuera_orden=0
+[11:19:52] == EXP-1b/maquina-perdida-broker/tactica/rep5  inicio
+[11:20:16]    evento generador_inicia {'gen_start_us': 1794673216205232}
+[11:21:16]    evento monitor_inyecta_falla {'svc': 'redpanda-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.505083, 'maquina_perdida': True}
+[11:21:18]    evento heartbeat_detecta_caida {'svc': 'redpanda-2'}
+[11:21:18]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'redpanda-2'}
+[11:22:50]    evento generador_termina {}
+[11:22:56]    verificando…
+[11:23:13]    exportando tablas y logs…
+[11:23:22] == EXP-1b/maquina-perdida-broker/tactica/rep5  ok=True 209.1s  enviadas=761597 perdidas=0 perdidas_panico=0 dup=68 fuera_orden=0
+[11:23:22] == EXP-1b/maquina-perdida-broker/base/rep5  inicio
+[11:23:32]    evento generador_inicia {'gen_start_us': 1794673412692316}
+[11:24:33]    evento monitor_inyecta_falla {'svc': 'redpanda-0', 'senal': 'SIGKILL', 'gen_elapsed': 60.500145, 'maquina_perdida': True}
+[11:24:33]    evento heartbeat_detecta_caida {'svc': 'redpanda-0'}
+[11:24:33]    evento heartbeat_no_relanza_maquina_perdida {'svc': 'redpanda-0'}
+[11:26:06]    evento generador_termina {}
+[11:26:11]    verificando…
+[11:26:22]    exportando tablas y logs…
+[11:26:25] == EXP-1b/maquina-perdida-broker/base/rep5  ok=True 183.5s  enviadas=761599 perdidas=454365 perdidas_panico=7105 dup=0 fuera_orden=0
+[11:26:25] == EXP-1c/falla-despachador-sesion-2s/tactica/rep1  inicio
+[11:26:49]    evento generador_inicia {'gen_start_us': 1794673609490278}
+[11:27:49]    evento monitor_inyecta_falla {'svc': 'despachador-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.500413, 'maquina_perdida': False}
+[11:27:50]    evento heartbeat_detecta_caida {'svc': 'despachador-2'}
+[11:27:50]    evento heartbeat_relanza {'svc': 'despachador-2', 'ok': True, 'err': ''}
+[11:27:51]    evento heartbeat_instancia_viva {'svc': 'despachador-2', 'caida_s': 1.001832}
+[11:29:23]    evento generador_termina {}
+[11:29:29]    verificando…
+[11:29:45]    exportando tablas y logs…
+[11:29:52] == EXP-1c/falla-despachador-sesion-2s/tactica/rep1  ok=True 207.3s  enviadas=761600 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[11:29:52] == EXP-1c/falla-despachador-sesion-2s/tactica/rep2  inicio
+[11:30:18]    evento generador_inicia {'gen_start_us': 1794673818617061}
+[11:31:19]    evento monitor_inyecta_falla {'svc': 'despachador-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.50073, 'maquina_perdida': False}
+[11:31:20]    evento heartbeat_detecta_caida {'svc': 'despachador-2'}
+[11:31:20]    evento heartbeat_relanza {'svc': 'despachador-2', 'ok': True, 'err': ''}
+[11:31:21]    evento heartbeat_instancia_viva {'svc': 'despachador-2', 'caida_s': 0.99334}
+[11:32:52]    evento generador_termina {}
+[11:32:58]    verificando…
+[11:33:13]    exportando tablas y logs…
+[11:33:20] == EXP-1c/falla-despachador-sesion-2s/tactica/rep2  ok=True 207.9s  enviadas=761599 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[11:33:20] == EXP-1c/falla-despachador-sesion-2s/tactica/rep3  inicio
+[11:33:45]    evento generador_inicia {'gen_start_us': 1794674025348710}
+[11:34:45]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.500131, 'maquina_perdida': False}
+[11:34:46]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[11:34:46]    evento heartbeat_relanza {'svc': 'despachador-1', 'ok': True, 'err': ''}
+[11:34:47]    evento heartbeat_instancia_viva {'svc': 'despachador-1', 'caida_s': 0.9969}
+[11:36:19]    evento generador_termina {}
+[11:36:25]    verificando…
+[11:36:41]    exportando tablas y logs…
+[11:36:48] == EXP-1c/falla-despachador-sesion-2s/tactica/rep3  ok=True 207.9s  enviadas=761596 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[11:36:48] == EXP-1c/falla-despachador-sesion-2s/tactica/rep4  inicio
+[11:37:10]    evento generador_inicia {'gen_start_us': 1794674230053722}
+[11:38:10]    evento monitor_inyecta_falla {'svc': 'despachador-2', 'senal': 'SIGKILL', 'gen_elapsed': 60.503101, 'maquina_perdida': False}
+[11:38:10]    evento heartbeat_detecta_caida {'svc': 'despachador-2'}
+[11:38:11]    evento heartbeat_relanza {'svc': 'despachador-2', 'ok': True, 'err': ''}
+[11:38:11]    evento heartbeat_instancia_viva {'svc': 'despachador-2', 'caida_s': 0.993948}
+[11:39:43]    evento generador_termina {}
+[11:39:50]    verificando…
+[11:40:06]    exportando tablas y logs…
+[11:40:14] == EXP-1c/falla-despachador-sesion-2s/tactica/rep4  ok=True 205.7s  enviadas=761596 perdidas=0 perdidas_panico=0 dup=0 fuera_orden=0
+[11:40:14] == EXP-1c/falla-despachador-sesion-2s/tactica/rep5  inicio
+[11:40:36]    evento generador_inicia {'gen_start_us': 1794674436425672}
+[11:41:36]    evento monitor_inyecta_falla {'svc': 'despachador-1', 'senal': 'SIGKILL', 'gen_elapsed': 60.500282, 'maquina_perdida': False}
+[11:41:37]    evento heartbeat_detecta_caida {'svc': 'despachador-1'}
+[11:41:37]    evento heartbeat_relanza {'svc': 'despachador-1', 'ok': True, 'err': ''}
+[11:41:38]    evento heartbeat_instancia_viva {'svc': 'despachador-1', 'caida_s': 1.00563}
+[11:43:10]    evento generador_termina {}
+[11:43:16]    verificando…
+[11:43:32]    exportando tablas y logs…
+[11:43:39] == EXP-1c/falla-despachador-sesion-2s/tactica/rep5  ok=True 205.5s  enviadas=761597 perdidas=0 perdidas_panico=0 dup=1 fuera_orden=0
+[11:43:39] ### fin de todas las corridas
