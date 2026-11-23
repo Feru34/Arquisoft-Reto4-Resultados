@@ -1,0 +1,218 @@
+{
+ "exp": "EXP-3",
+ "escenario": "pico",
+ "variante": "base",
+ "rep": 4,
+ "seed": 4001,
+ "cfg": {
+  "brokers": [
+   0,
+   1,
+   2
+  ],
+  "rf": 3,
+  "tel_parts": 1,
+  "panic_lane": 0,
+  "ack": "replicated",
+  "commit": "after_write",
+  "receptors": [
+   1,
+   2,
+   3
+  ],
+  "despachadores": [],
+  "haproxy": "haproxy-3.cfg"
+ },
+ "carga": {
+  "PROFILE": "30:1500,300:5000",
+  "TAIL_RATE": 1500,
+  "TAIL_MAX_S": 600,
+  "DRAIN_MAX_S": 90
+ },
+ "inicio": "2026-11-13T04:27:19.334949",
+ "setup_s": 18.0,
+ "generador": {
+  "acked": 2445000,
+  "attempts": 2445002,
+  "durationS": 930.022145091,
+  "emitted": 2445000,
+  "endUs": 1794562987573145,
+  "failedAttempts": 2,
+  "panics": 0,
+  "profile": "30:1500,300:5000",
+  "startUs": 1794562057577368,
+  "tailRate": 1500,
+  "trucks": 18000
+ },
+ "eventos": [
+  {
+   "ts": 1794562057626330,
+   "kind": "generador_inicia",
+   "gen_start_us": 1794562057577369
+  },
+  {
+   "ts": 1794562991053152,
+   "kind": "generador_termina"
+  }
+ ],
+ "verificacion": {
+  "conteos": {
+   "enviadas": 2445000,
+   "telemetria": 2445000,
+   "panicos": 0,
+   "atrasadas": 0,
+   "acusadas": 2445000,
+   "nunca_enviadas": 0,
+   "no_acusadas": 0,
+   "perdidas": 0,
+   "perdidas_acusadas": 0,
+   "perdidas_tel": 0,
+   "perdidas_panico": 0,
+   "perdidas_panico_acusadas": 0,
+   "panicos_guardados": 0,
+   "duplicados": 0,
+   "duplicados_panico": 0,
+   "reintentos": 2,
+   "detectadas": 406057,
+   "no_detectadas": 2038943,
+   "det_duplicadas": 0,
+   "tel_pico": 1499972,
+   "tel_pico_detectadas": 361059,
+   "guardadas_fuera_de_registro": 0,
+   "fuera_de_orden": 0,
+   "reentregas_tardias": 0,
+   "fuera_de_orden_worker": 0,
+   "panicos_guardados_pct": null,
+   "por_receptor": {
+    "1": 815000,
+    "2": 815000,
+    "3": 815000
+   },
+   "por_particion": {
+    "0": 2445000
+   },
+   "panico_por_escritor": {},
+   "anomalias": {
+    "0": 402627,
+    "1": 1996,
+    "2": 845,
+    "3": 2515
+   }
+  },
+  "latencias_s": {
+   "guardado_desde_envio": {
+    "n": 2445000,
+    "min": -0.020525,
+    "p50": 0.001421,
+    "p95": 0.006302,
+    "p99": 0.024163,
+    "p999": 1.011721,
+    "max": 1.508132,
+    "mean": 0.0054193329807770965
+   },
+   "guardado_desde_origen": {
+    "n": 2445000,
+    "min": -0.019493,
+    "p50": 0.002019,
+    "p95": 0.006755,
+    "p99": 0.024705,
+    "p999": 1.01229,
+    "max": 1.508853,
+    "mean": 0.00592744832801636
+   },
+   "guardado_tel_puntual_desde_envio": {
+    "n": 2445000,
+    "min": -0.020525,
+    "p50": 0.001421,
+    "p95": 0.006302,
+    "p99": 0.024163,
+    "p999": 1.011721,
+    "max": 1.508132,
+    "mean": 0.0054193329807770965
+   },
+   "guardado_tel_atrasada_desde_envio": {
+    "n": 0,
+    "min": null,
+    "p50": null,
+    "p95": null,
+    "p99": null,
+    "p999": null,
+    "max": null,
+    "mean": null
+   },
+   "guardado_tel_atrasada_desde_origen": {
+    "n": 0,
+    "min": null,
+    "p50": null,
+    "p95": null,
+    "p99": null,
+    "p999": null,
+    "max": null,
+    "mean": null
+   },
+   "acuse_desde_envio": {
+    "n": 2445000,
+    "min": -0.020555,
+    "p50": 0.001239,
+    "p95": 0.005754,
+    "p99": 0.021424,
+    "p999": 1.008262,
+    "max": 1.498966,
+    "mean": 0.005104046905521472
+   },
+   "panico_guardado_desde_origen": {
+    "n": 0,
+    "min": null,
+    "p50": null,
+    "p95": null,
+    "p99": null,
+    "p999": null,
+    "max": null,
+    "mean": null
+   },
+   "panico_acuse_desde_origen": {
+    "n": 0,
+    "min": null,
+    "p50": null,
+    "p95": null,
+    "p99": null,
+    "p999": null,
+    "max": null,
+    "mean": null
+   },
+   "deteccion_desde_origen": {
+    "n": 406057,
+    "min": 0.255557,
+    "p50": 412.711236,
+    "p95": 797.508197,
+    "p99": 832.202265,
+    "p999": 840.829821,
+    "max": 841.791874,
+    "mean": 412.25646712658323
+   },
+   "deteccion_desde_origen_pico": {
+    "n": 361059,
+    "min": 71.978103,
+    "p50": 460.126766,
+    "p95": 802.25634,
+    "p99": 833.277852,
+    "p999": 840.935321,
+    "max": 841.791874,
+    "mean": 459.0827111256775
+   },
+   "deteccion_desde_guardado": {
+    "n": 406057,
+    "min": 0.003413,
+    "p50": 412.708801,
+    "p95": 797.506599,
+    "p99": 832.200744,
+    "p999": 840.828962,
+    "max": 841.790063,
+    "mean": 412.2542669217844
+   }
+  }
+ },
+ "ok": true,
+ "fin": "2026-11-13T04:43:43.870735",
+ "duracion_s": 984.5
+}

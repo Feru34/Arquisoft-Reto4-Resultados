@@ -1,0 +1,2875 @@
+[
+    {
+        "Id": "00b2314001a14ae7564a3e1eed5b8bb724ebea5af2029faaa5bb0a797613e0ba",
+        "Created": "2026-11-13T09:43:44.026500764Z",
+        "Path": "/entrypoint.sh",
+        "Args": [
+            "redpanda start",
+            "--smp=1",
+            "--memory=1G",
+            "--reserve-memory=0M",
+            "--overprovisioned",
+            "--kafka-addr=internal://0.0.0.0:9092",
+            "--advertise-kafka-addr=internal://redpanda-0:9092",
+            "--rpc-addr=redpanda-0:33145",
+            "--advertise-rpc-addr=redpanda-0:33145",
+            "--default-log-level=warn",
+            "--unsafe-bypass-fsync=false"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 90978,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-13T09:43:44.26862693Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:82a69763bef8d8b55ea5a520fa1b38f993908ef68946819ca1aed43541824c48",
+        "ResolvConfPath": "/var/lib/docker/containers/00b2314001a14ae7564a3e1eed5b8bb724ebea5af2029faaa5bb0a797613e0ba/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/00b2314001a14ae7564a3e1eed5b8bb724ebea5af2029faaa5bb0a797613e0ba/hostname",
+        "HostsPath": "/var/lib/docker/containers/00b2314001a14ae7564a3e1eed5b8bb724ebea5af2029faaa5bb0a797613e0ba/hosts",
+        "LogPath": "",
+        "Name": "/lsa-redpanda-0-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "local",
+                "Config": {}
+            },
+            "NetworkMode": "lsa_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "4952557dd04cf5c797706cf6efc9959cc2b93cfa2514b43c9e1f7414ffd93985",
+                "Source": "/var/lib/docker/volumes/4952557dd04cf5c797706cf6efc9959cc2b93cfa2514b43c9e1f7414ffd93985/_data",
+                "Destination": "/var/lib/redpanda/data",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "00b2314001a1",
+            "Domainname": "",
+            "User": "redpanda",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "8081/tcp": {},
+                "8082/tcp": {},
+                "9092/tcp": {},
+                "9644/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "EDITOR=vi"
+            ],
+            "Cmd": [
+                "redpanda start",
+                "--smp=1",
+                "--memory=1G",
+                "--reserve-memory=0M",
+                "--overprovisioned",
+                "--kafka-addr=internal://0.0.0.0:9092",
+                "--advertise-kafka-addr=internal://redpanda-0:9092",
+                "--rpc-addr=redpanda-0:33145",
+                "--advertise-rpc-addr=redpanda-0:33145",
+                "--default-log-level=warn",
+                "--unsafe-bypass-fsync=false"
+            ],
+            "Image": "redpandadata/redpanda:v24.2.7",
+            "Volumes": {
+                "/var/lib/redpanda/data": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/entrypoint.sh"
+            ],
+            "Labels": {
+                "com.docker.compose.config-hash": "69aa9d76431cfa937727559d4a8138f05a063470ac3bd9ae0729d6544ebac80e",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:eca8188c285f65ee2edea3c76af7cec497dd60f58e93b67e1ab1be595b3debb5",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "lsa",
+                "com.docker.compose.project.config_files": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo",
+                "com.docker.compose.service": "redpanda-0",
+                "com.docker.compose.version": "5.6.1",
+                "org.opencontainers.image.authors": "Redpanda Data \u003chi@redpanda.com\u003e"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "8e5001b28a6a5c6e8a5c0676d77ff9f46cea17cc4d288056afefcd91c3c979bf",
+            "SandboxKey": "/var/run/docker/netns/8e5001b28a6a",
+            "Ports": {
+                "8081/tcp": null,
+                "8082/tcp": null,
+                "9092/tcp": null,
+                "9644/tcp": null
+            },
+            "Networks": {
+                "lsa_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "lsa-redpanda-0-1",
+                        "redpanda-0"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ef4ab3901d6176111f54816ba820ab65af5b3e21cca26e60d147beed7b85c793",
+                    "EndpointID": "1891e9a1003a859e389270e57c1842a3bdbe41e67f6ef45f89c19ed46efa5acf",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.2",
+                    "MacAddress": "06:cb:5d:01:b1:7f",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "lsa-redpanda-0-1",
+                        "redpanda-0",
+                        "00b2314001a1"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "digest": "sha256:eca8188c285f65ee2edea3c76af7cec497dd60f58e93b67e1ab1be595b3debb5",
+            "size": 1372,
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux"
+            }
+        }
+    },
+    {
+        "Id": "514816e07a9dc1d2f1828bbbbe755274adc5561acc2f7643c6938d92dc2d59db",
+        "Created": "2026-11-13T09:43:44.026428847Z",
+        "Path": "/entrypoint.sh",
+        "Args": [
+            "redpanda start",
+            "--smp=1",
+            "--memory=1G",
+            "--reserve-memory=0M",
+            "--overprovisioned",
+            "--kafka-addr=internal://0.0.0.0:9092",
+            "--advertise-kafka-addr=internal://redpanda-1:9092",
+            "--rpc-addr=redpanda-1:33145",
+            "--advertise-rpc-addr=redpanda-1:33145",
+            "--seeds=redpanda-0:33145",
+            "--default-log-level=warn",
+            "--unsafe-bypass-fsync=false"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 91125,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-13T09:43:44.419003583Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:82a69763bef8d8b55ea5a520fa1b38f993908ef68946819ca1aed43541824c48",
+        "ResolvConfPath": "/var/lib/docker/containers/514816e07a9dc1d2f1828bbbbe755274adc5561acc2f7643c6938d92dc2d59db/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/514816e07a9dc1d2f1828bbbbe755274adc5561acc2f7643c6938d92dc2d59db/hostname",
+        "HostsPath": "/var/lib/docker/containers/514816e07a9dc1d2f1828bbbbe755274adc5561acc2f7643c6938d92dc2d59db/hosts",
+        "LogPath": "",
+        "Name": "/lsa-redpanda-1-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "local",
+                "Config": {}
+            },
+            "NetworkMode": "lsa_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "baec2bcb9ebed01522217f0790984603ed84de25075c12d560ba990494e331af",
+                "Source": "/var/lib/docker/volumes/baec2bcb9ebed01522217f0790984603ed84de25075c12d560ba990494e331af/_data",
+                "Destination": "/var/lib/redpanda/data",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "514816e07a9d",
+            "Domainname": "",
+            "User": "redpanda",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "8081/tcp": {},
+                "8082/tcp": {},
+                "9092/tcp": {},
+                "9644/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "EDITOR=vi"
+            ],
+            "Cmd": [
+                "redpanda start",
+                "--smp=1",
+                "--memory=1G",
+                "--reserve-memory=0M",
+                "--overprovisioned",
+                "--kafka-addr=internal://0.0.0.0:9092",
+                "--advertise-kafka-addr=internal://redpanda-1:9092",
+                "--rpc-addr=redpanda-1:33145",
+                "--advertise-rpc-addr=redpanda-1:33145",
+                "--seeds=redpanda-0:33145",
+                "--default-log-level=warn",
+                "--unsafe-bypass-fsync=false"
+            ],
+            "Image": "redpandadata/redpanda:v24.2.7",
+            "Volumes": {
+                "/var/lib/redpanda/data": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/entrypoint.sh"
+            ],
+            "Labels": {
+                "com.docker.compose.config-hash": "980fb1adeb8ec437e7513b3ea0e45386b02f77af3787e04e543701fc6a4c24fa",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:eca8188c285f65ee2edea3c76af7cec497dd60f58e93b67e1ab1be595b3debb5",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "lsa",
+                "com.docker.compose.project.config_files": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo",
+                "com.docker.compose.service": "redpanda-1",
+                "com.docker.compose.version": "5.6.1",
+                "org.opencontainers.image.authors": "Redpanda Data \u003chi@redpanda.com\u003e"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "f432be9c29a70f20928c9b0850630830ab7d910caab7200366a8c54c59f24d0a",
+            "SandboxKey": "/var/run/docker/netns/f432be9c29a7",
+            "Ports": {
+                "8081/tcp": null,
+                "8082/tcp": null,
+                "9092/tcp": null,
+                "9644/tcp": null
+            },
+            "Networks": {
+                "lsa_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "lsa-redpanda-1-1",
+                        "redpanda-1"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ef4ab3901d6176111f54816ba820ab65af5b3e21cca26e60d147beed7b85c793",
+                    "EndpointID": "3d00bd8372518e34f43dde38a49a87abdeb7fe560fbfdc1cbcd1c25e386186f0",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.4",
+                    "MacAddress": "76:b8:c2:63:c8:63",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "lsa-redpanda-1-1",
+                        "redpanda-1",
+                        "514816e07a9d"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "digest": "sha256:eca8188c285f65ee2edea3c76af7cec497dd60f58e93b67e1ab1be595b3debb5",
+            "size": 1372,
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux"
+            }
+        }
+    },
+    {
+        "Id": "9b2aff7f67270f170d366e2bb80d70cbeab29958fde6b6a460a2b41eba94cea3",
+        "Created": "2026-11-13T09:43:44.026660055Z",
+        "Path": "/entrypoint.sh",
+        "Args": [
+            "redpanda start",
+            "--smp=1",
+            "--memory=1G",
+            "--reserve-memory=0M",
+            "--overprovisioned",
+            "--kafka-addr=internal://0.0.0.0:9092",
+            "--advertise-kafka-addr=internal://redpanda-2:9092",
+            "--rpc-addr=redpanda-2:33145",
+            "--advertise-rpc-addr=redpanda-2:33145",
+            "--seeds=redpanda-0:33145",
+            "--default-log-level=warn",
+            "--unsafe-bypass-fsync=false"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 91190,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-13T09:43:44.485587125Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:82a69763bef8d8b55ea5a520fa1b38f993908ef68946819ca1aed43541824c48",
+        "ResolvConfPath": "/var/lib/docker/containers/9b2aff7f67270f170d366e2bb80d70cbeab29958fde6b6a460a2b41eba94cea3/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/9b2aff7f67270f170d366e2bb80d70cbeab29958fde6b6a460a2b41eba94cea3/hostname",
+        "HostsPath": "/var/lib/docker/containers/9b2aff7f67270f170d366e2bb80d70cbeab29958fde6b6a460a2b41eba94cea3/hosts",
+        "LogPath": "",
+        "Name": "/lsa-redpanda-2-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "local",
+                "Config": {}
+            },
+            "NetworkMode": "lsa_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "d27873b3269745f4fea522d0d48c37950ce0352c19f59f460b83cfc7f87cf177",
+                "Source": "/var/lib/docker/volumes/d27873b3269745f4fea522d0d48c37950ce0352c19f59f460b83cfc7f87cf177/_data",
+                "Destination": "/var/lib/redpanda/data",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "9b2aff7f6727",
+            "Domainname": "",
+            "User": "redpanda",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "8081/tcp": {},
+                "8082/tcp": {},
+                "9092/tcp": {},
+                "9644/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "EDITOR=vi"
+            ],
+            "Cmd": [
+                "redpanda start",
+                "--smp=1",
+                "--memory=1G",
+                "--reserve-memory=0M",
+                "--overprovisioned",
+                "--kafka-addr=internal://0.0.0.0:9092",
+                "--advertise-kafka-addr=internal://redpanda-2:9092",
+                "--rpc-addr=redpanda-2:33145",
+                "--advertise-rpc-addr=redpanda-2:33145",
+                "--seeds=redpanda-0:33145",
+                "--default-log-level=warn",
+                "--unsafe-bypass-fsync=false"
+            ],
+            "Image": "redpandadata/redpanda:v24.2.7",
+            "Volumes": {
+                "/var/lib/redpanda/data": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/entrypoint.sh"
+            ],
+            "Labels": {
+                "com.docker.compose.config-hash": "b8bbde99cbf6b42782d64df7a2b39fc2091c9a284a6287cd3d7926cb65e8fbad",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:eca8188c285f65ee2edea3c76af7cec497dd60f58e93b67e1ab1be595b3debb5",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "lsa",
+                "com.docker.compose.project.config_files": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo",
+                "com.docker.compose.service": "redpanda-2",
+                "com.docker.compose.version": "5.6.1",
+                "org.opencontainers.image.authors": "Redpanda Data \u003chi@redpanda.com\u003e"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "d95293cdcbb2d1d35befb1f2777968e51e96d0ed6e843f5968fec36476df331b",
+            "SandboxKey": "/var/run/docker/netns/d95293cdcbb2",
+            "Ports": {
+                "8081/tcp": null,
+                "8082/tcp": null,
+                "9092/tcp": null,
+                "9644/tcp": null
+            },
+            "Networks": {
+                "lsa_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "lsa-redpanda-2-1",
+                        "redpanda-2"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ef4ab3901d6176111f54816ba820ab65af5b3e21cca26e60d147beed7b85c793",
+                    "EndpointID": "3fb29b96cec7dab89e5f653c529cb5a43dd6ff84027ac4db94e96ae2b9943843",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.5",
+                    "MacAddress": "ea:7c:15:b2:f1:62",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "lsa-redpanda-2-1",
+                        "redpanda-2",
+                        "9b2aff7f6727"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "digest": "sha256:eca8188c285f65ee2edea3c76af7cec497dd60f58e93b67e1ab1be595b3debb5",
+            "size": 1372,
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux"
+            }
+        }
+    },
+    {
+        "Id": "ca75cd3138142c46bbcf42ee3387dba867028b544f96a4cc9fa205ec6a0246cb",
+        "Created": "2026-11-13T09:43:44.032431805Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "postgres",
+            "-c",
+            "shared_buffers=512MB",
+            "-c",
+            "max_connections=200",
+            "-c",
+            "max_wal_size=4GB",
+            "-c",
+            "checkpoint_timeout=15min",
+            "-c",
+            "wal_buffers=16MB"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 91044,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-13T09:43:44.355555097Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:f377d590e5474681d4d7838635031a2b50647923b7abfa803ce9b5ff35d5c663",
+        "ResolvConfPath": "/var/lib/docker/containers/ca75cd3138142c46bbcf42ee3387dba867028b544f96a4cc9fa205ec6a0246cb/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/ca75cd3138142c46bbcf42ee3387dba867028b544f96a4cc9fa205ec6a0246cb/hostname",
+        "HostsPath": "/var/lib/docker/containers/ca75cd3138142c46bbcf42ee3387dba867028b544f96a4cc9fa205ec6a0246cb/hosts",
+        "LogPath": "",
+        "Name": "/lsa-postgres-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "local",
+                "Config": {}
+            },
+            "NetworkMode": "lsa_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/postgres/init.sql",
+                "Destination": "/docker-entrypoint-initdb.d/init.sql",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "volume",
+                "Name": "245cddfdaf04a5bf3e8f8d6f26636af17cab238a00da092b4b2288de34082038",
+                "Source": "/var/lib/docker/volumes/245cddfdaf04a5bf3e8f8d6f26636af17cab238a00da092b4b2288de34082038/_data",
+                "Destination": "/var/lib/postgresql/data",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "ca75cd313814",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "5432/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "POSTGRES_USER=lsa",
+                "POSTGRES_PASSWORD=lsa",
+                "POSTGRES_DB=lsa",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GOSU_VERSION=1.19",
+                "LANG=en_US.utf8",
+                "PG_MAJOR=16",
+                "PG_VERSION=16.16",
+                "PG_SHA256=9d5cd8633043b75740d5d59749c6b7365e6aeb53c47098b1a5e80bb18f87881a",
+                "DOCKER_PG_LLVM_DEPS=llvm21-dev \t\tclang21",
+                "PGDATA=/var/lib/postgresql/data"
+            ],
+            "Cmd": [
+                "postgres",
+                "-c",
+                "shared_buffers=512MB",
+                "-c",
+                "max_connections=200",
+                "-c",
+                "max_wal_size=4GB",
+                "-c",
+                "checkpoint_timeout=15min",
+                "-c",
+                "wal_buffers=16MB"
+            ],
+            "Image": "postgres:16-alpine",
+            "Volumes": {
+                "/var/lib/postgresql/data": {}
+            },
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "Labels": {
+                "com.docker.compose.config-hash": "6f0b575dbe559c18bb30f8e9fe0ffc5543cdd0e94e81ecaf69279fdc3feec4a3",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:40e58641410e030f5769096bca8372f68f243e1859c8ecdf11f227da390d514d",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "lsa",
+                "com.docker.compose.project.config_files": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo",
+                "com.docker.compose.service": "postgres",
+                "com.docker.compose.version": "5.6.1"
+            },
+            "StopSignal": "SIGINT"
+        },
+        "NetworkSettings": {
+            "SandboxID": "311eecb114bbcc51082e1e9f183bfef4e1acd76058988222739a5096213cf2ef",
+            "SandboxKey": "/var/run/docker/netns/311eecb114bb",
+            "Ports": {
+                "5432/tcp": null
+            },
+            "Networks": {
+                "lsa_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "lsa-postgres-1",
+                        "postgres"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ef4ab3901d6176111f54816ba820ab65af5b3e21cca26e60d147beed7b85c793",
+                    "EndpointID": "5d018f9aade176e72259c2f8d88ed3844f999b266280051c50271997fac1c290",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.3",
+                    "MacAddress": "ca:06:2c:03:56:68",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "lsa-postgres-1",
+                        "postgres",
+                        "ca75cd313814"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:40e58641410e030f5769096bca8372f68f243e1859c8ecdf11f227da390d514d",
+            "size": 3056,
+            "annotations": {
+                "com.docker.official-images.bashbrew.arch": "arm64v8",
+                "org.opencontainers.image.base.digest": "sha256:1829893486be257df5049ab3b7fc95afbd0fc09d89803cbc580bda1ba5386b29",
+                "org.opencontainers.image.base.name": "alpine:3.24",
+                "org.opencontainers.image.created": "2026-11-12T20:55:19Z",
+                "org.opencontainers.image.revision": "168a848e5905af32aaa5fd6fad4f30906c80af95",
+                "org.opencontainers.image.source": "https://github.com/docker-library/postgres.git#168a848e5905af32aaa5fd6fad4f30906c80af95:16/alpine3.24",
+                "org.opencontainers.image.url": "https://hub.docker.com/_/postgres",
+                "org.opencontainers.image.version": "16.16-alpine3.24"
+            },
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux",
+                "variant": "v8"
+            }
+        }
+    },
+    {
+        "Id": "554dc797ade980df9d4b89240403e077272030f602cb47ef413572aa0363c0e9",
+        "Created": "2026-11-13T09:44:04.058851884Z",
+        "Path": "receptor",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 92098,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-13T09:44:04.476561634Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:19c9841d0e883e31de598c32531fc2b32cbf8e376eb961cfaaf03883e37cc123",
+        "ResolvConfPath": "/var/lib/docker/containers/554dc797ade980df9d4b89240403e077272030f602cb47ef413572aa0363c0e9/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/554dc797ade980df9d4b89240403e077272030f602cb47ef413572aa0363c0e9/hostname",
+        "HostsPath": "/var/lib/docker/containers/554dc797ade980df9d4b89240403e077272030f602cb47ef413572aa0363c0e9/hosts",
+        "LogPath": "",
+        "Name": "/lsa-receptor-1-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "local",
+                "Config": {}
+            },
+            "NetworkMode": "lsa_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "554dc797ade9",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "ACK_MODE=replicated",
+                "INSTANCE=1",
+                "PG_DSN=postgres://lsa:lsa@postgres:5432/lsa",
+                "PANIC_PARTITIONS=3",
+                "TEL_TOPIC=telemetria",
+                "PANIC_LANE=1",
+                "BROKERS=redpanda-0:9092,redpanda-1:9092,redpanda-2:9092",
+                "PANIC_TOPIC=panicos",
+                "TEL_PARTITIONS=24",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "receptor"
+            ],
+            "Image": "lsa-app:latest",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "8c1b1473cb3e7e79b4f586d40eae584830fe1366ba2d01a0ad887cc2a7ee105a",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:45f76c8ed9c2052d0f7622c0e3034463f182d37c0170bf55d52d257d10891326",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "lsa",
+                "com.docker.compose.project.config_files": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo",
+                "com.docker.compose.service": "receptor-1",
+                "com.docker.compose.version": "5.6.1"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "4f411c17b575fda3784e2da66b96ede77f9070952184937ed5ffdf8180e99601",
+            "SandboxKey": "/var/run/docker/netns/4f411c17b575",
+            "Ports": {},
+            "Networks": {
+                "lsa_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "lsa-receptor-1-1",
+                        "receptor-1"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ef4ab3901d6176111f54816ba820ab65af5b3e21cca26e60d147beed7b85c793",
+                    "EndpointID": "9838fbccf6482fbb0da4d4ed4bdc93bf596b9c5c81ed1d73e1864f7f94754e44",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.12",
+                    "MacAddress": "62:6d:ec:1f:83:51",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "lsa-receptor-1-1",
+                        "receptor-1",
+                        "554dc797ade9"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:45f76c8ed9c2052d0f7622c0e3034463f182d37c0170bf55d52d257d10891326",
+            "size": 866,
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux"
+            }
+        }
+    },
+    {
+        "Id": "532bd59d69abb7167c0e0c5835935f712b0f4488f4e861c6a05892dfa941265a",
+        "Created": "2026-11-13T09:44:04.059020676Z",
+        "Path": "receptor",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 91706,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-13T09:44:04.163535717Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:19c9841d0e883e31de598c32531fc2b32cbf8e376eb961cfaaf03883e37cc123",
+        "ResolvConfPath": "/var/lib/docker/containers/532bd59d69abb7167c0e0c5835935f712b0f4488f4e861c6a05892dfa941265a/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/532bd59d69abb7167c0e0c5835935f712b0f4488f4e861c6a05892dfa941265a/hostname",
+        "HostsPath": "/var/lib/docker/containers/532bd59d69abb7167c0e0c5835935f712b0f4488f4e861c6a05892dfa941265a/hosts",
+        "LogPath": "",
+        "Name": "/lsa-receptor-2-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "local",
+                "Config": {}
+            },
+            "NetworkMode": "lsa_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "532bd59d69ab",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PANIC_LANE=1",
+                "BROKERS=redpanda-0:9092,redpanda-1:9092,redpanda-2:9092",
+                "PANIC_PARTITIONS=3",
+                "TEL_TOPIC=telemetria",
+                "PANIC_TOPIC=panicos",
+                "PG_DSN=postgres://lsa:lsa@postgres:5432/lsa",
+                "TEL_PARTITIONS=24",
+                "INSTANCE=2",
+                "ACK_MODE=replicated",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "receptor"
+            ],
+            "Image": "lsa-app:latest",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "a357b60c985db384eb2f89ce9d15c14ce0f3350c6aa8c53c71a162e8de8aeec6",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:45f76c8ed9c2052d0f7622c0e3034463f182d37c0170bf55d52d257d10891326",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "lsa",
+                "com.docker.compose.project.config_files": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo",
+                "com.docker.compose.service": "receptor-2",
+                "com.docker.compose.version": "5.6.1"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "7b1d943f2ee2203cdcb71eb1da78d1ca7393fa4143520f2e9ecd248dbdcd0382",
+            "SandboxKey": "/var/run/docker/netns/7b1d943f2ee2",
+            "Ports": {},
+            "Networks": {
+                "lsa_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "lsa-receptor-2-1",
+                        "receptor-2"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ef4ab3901d6176111f54816ba820ab65af5b3e21cca26e60d147beed7b85c793",
+                    "EndpointID": "7f9f284fb2284a2010c77207823a0287c413256b5489a85b919c2aacc1d5c49f",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.6",
+                    "MacAddress": "82:86:5f:0a:70:92",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "lsa-receptor-2-1",
+                        "receptor-2",
+                        "532bd59d69ab"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:45f76c8ed9c2052d0f7622c0e3034463f182d37c0170bf55d52d257d10891326",
+            "size": 866,
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux"
+            }
+        }
+    },
+    {
+        "Id": "2ea071aa3bd190a6c882bca013e19e2ca067fd319eefdec5c5ed81730d2d4fa1",
+        "Created": "2026-11-13T09:44:04.051396676Z",
+        "Path": "receptor",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 91824,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-13T09:44:04.265990467Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:19c9841d0e883e31de598c32531fc2b32cbf8e376eb961cfaaf03883e37cc123",
+        "ResolvConfPath": "/var/lib/docker/containers/2ea071aa3bd190a6c882bca013e19e2ca067fd319eefdec5c5ed81730d2d4fa1/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/2ea071aa3bd190a6c882bca013e19e2ca067fd319eefdec5c5ed81730d2d4fa1/hostname",
+        "HostsPath": "/var/lib/docker/containers/2ea071aa3bd190a6c882bca013e19e2ca067fd319eefdec5c5ed81730d2d4fa1/hosts",
+        "LogPath": "",
+        "Name": "/lsa-receptor-3-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "local",
+                "Config": {}
+            },
+            "NetworkMode": "lsa_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "2ea071aa3bd1",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "ACK_MODE=replicated",
+                "TEL_TOPIC=telemetria",
+                "PANIC_TOPIC=panicos",
+                "PANIC_PARTITIONS=3",
+                "PANIC_LANE=1",
+                "PG_DSN=postgres://lsa:lsa@postgres:5432/lsa",
+                "INSTANCE=3",
+                "BROKERS=redpanda-0:9092,redpanda-1:9092,redpanda-2:9092",
+                "TEL_PARTITIONS=24",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "receptor"
+            ],
+            "Image": "lsa-app:latest",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "b8e799c5adcbd64c99383537b034529c6cc43f7be1258cdb5ed87f95fe5b249a",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:45f76c8ed9c2052d0f7622c0e3034463f182d37c0170bf55d52d257d10891326",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "lsa",
+                "com.docker.compose.project.config_files": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo",
+                "com.docker.compose.service": "receptor-3",
+                "com.docker.compose.version": "5.6.1"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "615add7b2cea00fbd332a688e36072a9f99fce980743f158d099d64545e827d2",
+            "SandboxKey": "/var/run/docker/netns/615add7b2cea",
+            "Ports": {},
+            "Networks": {
+                "lsa_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "lsa-receptor-3-1",
+                        "receptor-3"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ef4ab3901d6176111f54816ba820ab65af5b3e21cca26e60d147beed7b85c793",
+                    "EndpointID": "c9d4380406dc2ac8f70102873fea402e99d42b099b1d35961331a74bbb2bf21c",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.8",
+                    "MacAddress": "22:24:bd:46:c7:5a",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "lsa-receptor-3-1",
+                        "receptor-3",
+                        "2ea071aa3bd1"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:45f76c8ed9c2052d0f7622c0e3034463f182d37c0170bf55d52d257d10891326",
+            "size": 866,
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux"
+            }
+        }
+    },
+    {
+        "Id": "ab3345b0a5b5ab0e275ec5052280f9fb63077b1e6e2831a8c02d794178c6e29c",
+        "Created": "2026-11-13T09:44:04.058822884Z",
+        "Path": "despachador",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 91763,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-13T09:44:04.215408717Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:19c9841d0e883e31de598c32531fc2b32cbf8e376eb961cfaaf03883e37cc123",
+        "ResolvConfPath": "/var/lib/docker/containers/ab3345b0a5b5ab0e275ec5052280f9fb63077b1e6e2831a8c02d794178c6e29c/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/ab3345b0a5b5ab0e275ec5052280f9fb63077b1e6e2831a8c02d794178c6e29c/hostname",
+        "HostsPath": "/var/lib/docker/containers/ab3345b0a5b5ab0e275ec5052280f9fb63077b1e6e2831a8c02d794178c6e29c/hosts",
+        "LogPath": "",
+        "Name": "/lsa-despachador-1-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "local",
+                "Config": {}
+            },
+            "NetworkMode": "lsa_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "ab3345b0a5b5",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PANIC_TOPIC=panicos",
+                "TEL_PARTITIONS=24",
+                "ACK_MODE=replicated",
+                "INSTANCE=1",
+                "BROKERS=redpanda-0:9092,redpanda-1:9092,redpanda-2:9092",
+                "PANIC_LANE=1",
+                "PANIC_PARTITIONS=3",
+                "PG_DSN=postgres://lsa:lsa@postgres:5432/lsa",
+                "COMMIT_MODE=after_write",
+                "TEL_TOPIC=telemetria",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "despachador"
+            ],
+            "Image": "lsa-app:latest",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "1190f24b9f02632919e1fef456185575889a959f9e78c4a923abec185b8e9d8d",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:45f76c8ed9c2052d0f7622c0e3034463f182d37c0170bf55d52d257d10891326",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "lsa",
+                "com.docker.compose.project.config_files": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo",
+                "com.docker.compose.service": "despachador-1",
+                "com.docker.compose.version": "5.6.1"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "92709fe3486b9076282a1a3b6a02d55b2831ca583da735147cc0e00535c4a71c",
+            "SandboxKey": "/var/run/docker/netns/92709fe3486b",
+            "Ports": {},
+            "Networks": {
+                "lsa_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "lsa-despachador-1-1",
+                        "despachador-1"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ef4ab3901d6176111f54816ba820ab65af5b3e21cca26e60d147beed7b85c793",
+                    "EndpointID": "3db6f34facf4686f6569f3f0a7e13a76002d6e1b2a65ca39997fee404afc4086",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.7",
+                    "MacAddress": "9a:0a:21:a7:64:22",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "lsa-despachador-1-1",
+                        "despachador-1",
+                        "ab3345b0a5b5"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:45f76c8ed9c2052d0f7622c0e3034463f182d37c0170bf55d52d257d10891326",
+            "size": 866,
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux"
+            }
+        }
+    },
+    {
+        "Id": "277673ff1fd2536fd221d0cb3bdd0ce06886f950c71924687ea2f7a275e7669a",
+        "Created": "2026-11-13T09:44:04.059000592Z",
+        "Path": "despachador",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 91884,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-13T09:44:04.311311134Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:19c9841d0e883e31de598c32531fc2b32cbf8e376eb961cfaaf03883e37cc123",
+        "ResolvConfPath": "/var/lib/docker/containers/277673ff1fd2536fd221d0cb3bdd0ce06886f950c71924687ea2f7a275e7669a/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/277673ff1fd2536fd221d0cb3bdd0ce06886f950c71924687ea2f7a275e7669a/hostname",
+        "HostsPath": "/var/lib/docker/containers/277673ff1fd2536fd221d0cb3bdd0ce06886f950c71924687ea2f7a275e7669a/hosts",
+        "LogPath": "",
+        "Name": "/lsa-despachador-2-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "local",
+                "Config": {}
+            },
+            "NetworkMode": "lsa_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "277673ff1fd2",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PG_DSN=postgres://lsa:lsa@postgres:5432/lsa",
+                "TEL_PARTITIONS=24",
+                "BROKERS=redpanda-0:9092,redpanda-1:9092,redpanda-2:9092",
+                "PANIC_LANE=1",
+                "PANIC_TOPIC=panicos",
+                "ACK_MODE=replicated",
+                "TEL_TOPIC=telemetria",
+                "INSTANCE=2",
+                "COMMIT_MODE=after_write",
+                "PANIC_PARTITIONS=3",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "despachador"
+            ],
+            "Image": "lsa-app:latest",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "8e9101779b43fa2405bf926b54ff173b882ec71ac30f6ad3a9f0bdbf9d3eca9e",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:45f76c8ed9c2052d0f7622c0e3034463f182d37c0170bf55d52d257d10891326",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "lsa",
+                "com.docker.compose.project.config_files": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo",
+                "com.docker.compose.service": "despachador-2",
+                "com.docker.compose.version": "5.6.1"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "67636b4bddfbd46d31bef32c8e55cea27ba6228d758645d3892047fb244a7fe6",
+            "SandboxKey": "/var/run/docker/netns/67636b4bddfb",
+            "Ports": {},
+            "Networks": {
+                "lsa_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "lsa-despachador-2-1",
+                        "despachador-2"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ef4ab3901d6176111f54816ba820ab65af5b3e21cca26e60d147beed7b85c793",
+                    "EndpointID": "07109bcd3cb535d2a563bb5e29d702b8ffdbda4b49f9a1d18a6272b2f31211c9",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.9",
+                    "MacAddress": "be:6b:10:9e:c4:b8",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "lsa-despachador-2-1",
+                        "despachador-2",
+                        "277673ff1fd2"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:45f76c8ed9c2052d0f7622c0e3034463f182d37c0170bf55d52d257d10891326",
+            "size": 866,
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux"
+            }
+        }
+    },
+    {
+        "Id": "0a9a461b8517d4eb6dc86573d9c137e4bbf36031ff2b2e0b228e852b1bd76a64",
+        "Created": "2026-11-13T09:44:04.059242426Z",
+        "Path": "procesador",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 92011,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-13T09:44:04.416322926Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:19c9841d0e883e31de598c32531fc2b32cbf8e376eb961cfaaf03883e37cc123",
+        "ResolvConfPath": "/var/lib/docker/containers/0a9a461b8517d4eb6dc86573d9c137e4bbf36031ff2b2e0b228e852b1bd76a64/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/0a9a461b8517d4eb6dc86573d9c137e4bbf36031ff2b2e0b228e852b1bd76a64/hostname",
+        "HostsPath": "/var/lib/docker/containers/0a9a461b8517d4eb6dc86573d9c137e4bbf36031ff2b2e0b228e852b1bd76a64/hosts",
+        "LogPath": "",
+        "Name": "/lsa-procesador-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "local",
+                "Config": {}
+            },
+            "NetworkMode": "lsa_default",
+            "PortBindings": {
+                "8082/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "8082"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "0a9a461b8517",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "8082/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "ACK_MODE=replicated",
+                "PANIC_PARTITIONS=3",
+                "PANIC_LANE=1",
+                "DETECT_COST_US=2000",
+                "TEL_TOPIC=telemetria",
+                "BROKERS=redpanda-0:9092,redpanda-1:9092,redpanda-2:9092",
+                "PANIC_TOPIC=panicos",
+                "PG_DSN=postgres://lsa:lsa@postgres:5432/lsa",
+                "TEL_PARTITIONS=24",
+                "PARTITIONS=24",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "procesador"
+            ],
+            "Image": "lsa-app:latest",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "6ba8128cfbbc0eaffd41727c856b8a28cf2b9edec65f904143f68afd85e68e1f",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:45f76c8ed9c2052d0f7622c0e3034463f182d37c0170bf55d52d257d10891326",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "lsa",
+                "com.docker.compose.project.config_files": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo",
+                "com.docker.compose.service": "procesador",
+                "com.docker.compose.version": "5.6.1"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "f71ffc898416841b260c7fec012dc6e0a86a7811750bd233dd67d5e1d0e66b35",
+            "SandboxKey": "/var/run/docker/netns/f71ffc898416",
+            "Ports": {
+                "8082/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "8082"
+                    }
+                ]
+            },
+            "Networks": {
+                "lsa_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "lsa-procesador-1",
+                        "procesador"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ef4ab3901d6176111f54816ba820ab65af5b3e21cca26e60d147beed7b85c793",
+                    "EndpointID": "5bfb5120ee46d8d64656573db4fcd28cdf2fae077c7fcf984cf3dc80af9519b2",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.11",
+                    "MacAddress": "66:72:8d:c6:34:09",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "lsa-procesador-1",
+                        "procesador",
+                        "0a9a461b8517"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:45f76c8ed9c2052d0f7622c0e3034463f182d37c0170bf55d52d257d10891326",
+            "size": 866,
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux"
+            }
+        }
+    },
+    {
+        "Id": "79cb1b9b342f45110de4a3c3ecddefd2febd966f8b4a2bdeb6fc2fc822c37651",
+        "Created": "2026-11-13T09:44:04.064943134Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "haproxy",
+            "-f",
+            "/usr/local/etc/haproxy/haproxy.cfg"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 91945,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-13T09:44:04.361091717Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:d2b3567d836f3b7d174edb6d6f611ed5308e7966e53a9cd9a597e0415a298efd",
+        "ResolvConfPath": "/var/lib/docker/containers/79cb1b9b342f45110de4a3c3ecddefd2febd966f8b4a2bdeb6fc2fc822c37651/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/79cb1b9b342f45110de4a3c3ecddefd2febd966f8b4a2bdeb6fc2fc822c37651/hostname",
+        "HostsPath": "/var/lib/docker/containers/79cb1b9b342f45110de4a3c3ecddefd2febd966f8b4a2bdeb6fc2fc822c37651/hosts",
+        "LogPath": "",
+        "Name": "/lsa-haproxy-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/haproxy/haproxy-3.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "local",
+                "Config": {}
+            },
+            "NetworkMode": "lsa_default",
+            "PortBindings": {
+                "8404/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "8404"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [
+                {
+                    "Name": "nofile",
+                    "Hard": 200000,
+                    "Soft": 200000
+                }
+            ],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/haproxy/haproxy-3.cfg",
+                "Destination": "/usr/local/etc/haproxy/haproxy.cfg",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "79cb1b9b342f",
+            "Domainname": "",
+            "User": "haproxy",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "8404/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "HAPROXY_VERSION=3.0.30",
+                "HAPROXY_URL=https://www.haproxy.org/download/3.0/src/haproxy-3.0.30.tar.gz",
+                "HAPROXY_SHA256=a7c594a1985936890737219ae2d7c3769346a92a2f536522b8b3abc540d7a608"
+            ],
+            "Cmd": [
+                "haproxy",
+                "-f",
+                "/usr/local/etc/haproxy/haproxy.cfg"
+            ],
+            "Image": "haproxy:3.0-alpine",
+            "Volumes": null,
+            "WorkingDir": "/var/lib/haproxy",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "Labels": {
+                "com.docker.compose.config-hash": "8ae118211c7b9808e564a705e3af0cf5a2c0d76ae1d70cfa73503b77cf8ed5c1",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:1f98cb834b5041c06cfcc836860bf2adfa63cca41ac418fe4592bee4cfd8006a",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "lsa",
+                "com.docker.compose.project.config_files": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo",
+                "com.docker.compose.service": "haproxy",
+                "com.docker.compose.version": "5.6.1"
+            },
+            "StopSignal": "SIGUSR1"
+        },
+        "NetworkSettings": {
+            "SandboxID": "755eec039decf99b1ceb7932e00790e97f35c4314fd706fd018256e6c06a8d96",
+            "SandboxKey": "/var/run/docker/netns/755eec039dec",
+            "Ports": {
+                "8404/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "8404"
+                    }
+                ]
+            },
+            "Networks": {
+                "lsa_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "lsa-haproxy-1",
+                        "haproxy"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ef4ab3901d6176111f54816ba820ab65af5b3e21cca26e60d147beed7b85c793",
+                    "EndpointID": "b751059edc36122818a7437b8e59f0ba29e810683003315e276b6f7d4167b869",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.10",
+                    "MacAddress": "da:0b:6d:6d:d4:9d",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "lsa-haproxy-1",
+                        "haproxy",
+                        "79cb1b9b342f"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:1f98cb834b5041c06cfcc836860bf2adfa63cca41ac418fe4592bee4cfd8006a",
+            "size": 2103,
+            "annotations": {
+                "com.docker.official-images.bashbrew.arch": "arm64v8",
+                "org.opencontainers.image.base.digest": "sha256:1829893486be257df5049ab3b7fc95afbd0fc09d89803cbc580bda1ba5386b29",
+                "org.opencontainers.image.base.name": "alpine:3.24",
+                "org.opencontainers.image.created": "2026-11-05T18:51:30Z",
+                "org.opencontainers.image.revision": "91a03a972d4f25848f34944c0251f8db78a5a92a",
+                "org.opencontainers.image.source": "https://github.com/docker-library/haproxy.git#91a03a972d4f25848f34944c0251f8db78a5a92a:3.0/alpine",
+                "org.opencontainers.image.url": "https://hub.docker.com/_/haproxy",
+                "org.opencontainers.image.version": "3.0.30-alpine"
+            },
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux",
+                "variant": "v8"
+            }
+        }
+    },
+    {
+        "Id": "6da1442e92ab5cde1280920f1e83c13adb5ce45690e380e13f8f5e6c0a8e7848",
+        "Created": "2026-11-13T09:44:09.661753387Z",
+        "Path": "generador",
+        "Args": [],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-13T09:44:09.715786178Z",
+            "FinishedAt": "2026-11-13T09:50:43.744386722Z"
+        },
+        "Image": "sha256:19c9841d0e883e31de598c32531fc2b32cbf8e376eb961cfaaf03883e37cc123",
+        "ResolvConfPath": "/var/lib/docker/containers/6da1442e92ab5cde1280920f1e83c13adb5ce45690e380e13f8f5e6c0a8e7848/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/6da1442e92ab5cde1280920f1e83c13adb5ce45690e380e13f8f5e6c0a8e7848/hostname",
+        "HostsPath": "/var/lib/docker/containers/6da1442e92ab5cde1280920f1e83c13adb5ce45690e380e13f8f5e6c0a8e7848/hosts",
+        "LogPath": "",
+        "Name": "/lsa-generador-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/resultados/EXP-3/pico/tactica/rep5:/results:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "local",
+                "Config": {}
+            },
+            "NetworkMode": "lsa_default",
+            "PortBindings": {
+                "9100/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "9100"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [
+                {
+                    "Name": "nofile",
+                    "Hard": 200000,
+                    "Soft": 200000
+                }
+            ],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/resultados/EXP-3/pico/tactica/rep5",
+                "Destination": "/results",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "6da1442e92ab",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "9100/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PROFILE=30:1500,300:5000",
+                "PANIC_EVERY_S=0",
+                "OUTAGE_S=120",
+                "OUTAGE_FRAC=0",
+                "TARGET=http://haproxy:8080/signal",
+                "PANIC_SPREAD_S=0",
+                "OUT_DIR=/results",
+                "TAIL_RATE=1500",
+                "PANIC_START_S=10",
+                "TRUCKS=18000",
+                "OUTAGE_FROM_S=60",
+                "DRAIN_MAX_S=90",
+                "TAIL_MAX_S=600",
+                "PANIC_BURST=0",
+                "OUTAGE_TO_S=240",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "generador"
+            ],
+            "Image": "lsa-app:latest",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "b6d7c7561498adcc4c69f4f84d678c19ed109b9cd12e0dc918996a03604b27a6",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:45f76c8ed9c2052d0f7622c0e3034463f182d37c0170bf55d52d257d10891326",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "lsa",
+                "com.docker.compose.project.config_files": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/feliperueda/Documents/MATI/Arquisoft/Reto 4/prototipo",
+                "com.docker.compose.service": "generador",
+                "com.docker.compose.version": "5.6.1"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "Networks": {
+                "lsa_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "lsa-generador-1",
+                        "generador"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "ef4ab3901d6176111f54816ba820ab65af5b3e21cca26e60d147beed7b85c793",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "lsa-generador-1",
+                        "generador",
+                        "6da1442e92ab"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:45f76c8ed9c2052d0f7622c0e3034463f182d37c0170bf55d52d257d10891326",
+            "size": 866,
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux"
+            }
+        }
+    }
+]

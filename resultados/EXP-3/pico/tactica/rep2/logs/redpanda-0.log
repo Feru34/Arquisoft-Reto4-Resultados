@@ -1,0 +1,37 @@
+redpanda-0-1  | 2026-11-13T08:32:07.227633802Z + '[' '' = true ']'
+redpanda-0-1  | 2026-11-13T08:32:07.227646094Z + exec /usr/bin/rpk redpanda start --smp=1 --memory=1G --reserve-memory=0M --overprovisioned --kafka-addr=internal://0.0.0.0:9092 --advertise-kafka-addr=internal://redpanda-0:9092 --rpc-addr=redpanda-0:33145 --advertise-rpc-addr=redpanda-0:33145 --default-log-level=warn --unsafe-bypass-fsync=false
+redpanda-0-1  | 2026-11-13T08:32:07.249982094Z WARNING: This is a setup for development purposes only; in this mode your clusters may run unrealistically fast and data can be corrupted any time your computer shuts down uncleanly.
+redpanda-0-1  | 2026-11-13T08:32:07.250617844Z We'd love to hear about your experience with Redpanda:
+redpanda-0-1  | 2026-11-13T08:32:07.250619844Z https://redpanda.com/feedback
+redpanda-0-1  | 2026-11-13T08:32:07.250620636Z Starting redpanda...
+redpanda-0-1  | 2026-11-13T08:32:07.250621469Z Running:
+redpanda-0-1  | 2026-11-13T08:32:07.250621969Z /opt/redpanda/bin/redpanda redpanda --redpanda-cfg /etc/redpanda/redpanda.yaml --lock-memory=false --default-log-level=warn --memory=1G --smp=1 --overprovisioned --reserve-memory=0M --unsafe-bypass-fsync=false
+redpanda-0-1  | 2026-11-13T08:32:07.313309927Z 
+redpanda-0-1  | 2026-11-13T08:32:07.313318052Z 
+redpanda-0-1  | 2026-11-13T08:32:07.313318594Z Welcome to the Redpanda community!
+redpanda-0-1  | 2026-11-13T08:32:07.313319177Z 
+redpanda-0-1  | 2026-11-13T08:32:07.313319636Z Documentation: https://docs.redpanda.com - Product documentation site
+redpanda-0-1  | 2026-11-13T08:32:07.313320427Z GitHub Discussion: https://github.com/redpanda-data/redpanda/discussions - Longer, more involved discussions
+redpanda-0-1  | 2026-11-13T08:32:07.313321177Z GitHub Issues: https://github.com/redpanda-data/redpanda/issues - Report and track issues with the codebase
+redpanda-0-1  | 2026-11-13T08:32:07.313321594Z Support: https://support.redpanda.com - Contact the support team privately
+redpanda-0-1  | 2026-11-13T08:32:07.313322052Z Product Feedback: https://redpanda.com/feedback - Let us know how we can improve your experience
+redpanda-0-1  | 2026-11-13T08:32:07.313322761Z Slack: https://redpanda.com/slack - Chat about all things Redpanda. Join the conversation!
+redpanda-0-1  | 2026-11-13T08:32:07.313323511Z Twitter: https://twitter.com/redpandadata - All the latest Redpanda news!
+redpanda-0-1  | 2026-11-13T08:32:07.313323969Z 
+redpanda-0-1  | 2026-11-13T08:32:07.313324427Z 
+redpanda-0-1  | 2026-11-13T08:32:07.316634511Z WARN  2026-11-13 08:32:07,316 seastar - Creation of perf_event based stall detector failed: falling back to posix timer: std::__1::system_error (error system:1, perf_event_open() failed: Operation not permitted)
+redpanda-0-1  | 2026-11-13T08:32:07.316713969Z WARN  2026-11-13 08:32:07,316 cpu_profiler - Creation of perf_event based cpu profiler failed: falling back to posix timer: perf_event_open() failed: Operation not permitted
+redpanda-0-1  | 2026-11-13T08:32:07.321160136Z WARN  2026-11-13 08:32:07,321 [shard 0:main] syschecks - Path: `/var/lib/redpanda/data' is on ext4, not XFS. This will probably work, but Redpanda is only tested on XFS and XFS is recommended for best performance.
+redpanda-0-1  | 2026-11-13T08:32:07.579403636Z WARN  2026-11-13 08:32:07,579 [shard 0:main] admin_api_server - server.cc:539 - Insecure Admin API listener on 0.0.0.0:9644, consider enabling `admin_api_require_auth`
+redpanda-0-1  | 2026-11-13T08:32:19.722476127Z WARN  2026-11-13 08:32:19,722 [shard 0:admi] seastar_memory - oversized allocation: 196608 bytes. This is non-fatal, but could lead to latency and/or fragmentation issues. Please report: at 0x8d9d71b 0x8a88883 0x8a939f7 0x3354ac3 /opt/redpanda/lib/libc++.so.1+0x646c7 /opt/redpanda/lib/libc++.so.1+0x68af3 0x3d75eb7 0x3d752fb 0x3d74c5f 0x3d704bf 0x38905ef 0x8c7ce5f 0x8c7c9cf 0x3aea19f 0x8c842df 0x8c46ddf 0x8c585c3 0x8c565e3 0x8c53773 0x8c5c0cf 0x8b4f8cf 0x8b51f4b 0x8b50127 0x8a59d8b 0x8a588df 0x327d577 0x8fd3867 /opt/redpanda/lib/libc.so.6+0x30a1b /opt/redpanda/lib/libc.so.6+0x30afb 0x3276f2f
+redpanda-0-1  | 2026-11-13T08:32:19.722492586Z    --------
+redpanda-0-1  | 2026-11-13T08:32:19.722495461Z    seastar::continuation<seastar::internal::promise_base_with_type<void>, seastar::httpd::connection::read_one()::$_0, seastar::future<void> seastar::future<void>::then_impl_nrvo<seastar::httpd::connection::read_one()::$_0, seastar::future<void>>(seastar::httpd::connection::read_one()::$_0&&)::'lambda'(seastar::internal::promise_base_with_type<void>&&, seastar::httpd::connection::read_one()::$_0&, seastar::future_state<seastar::internal::monostate>&&), void>
+redpanda-0-1  | 2026-11-13T08:32:19.722496794Z    --------
+redpanda-0-1  | 2026-11-13T08:32:19.722507961Z    seastar::internal::do_until_state<seastar::httpd::connection::read()::$_0, seastar::httpd::connection::read()::$_1>
+redpanda-0-1  | 2026-11-13T08:32:19.722509127Z    --------
+redpanda-0-1  | 2026-11-13T08:32:19.722509711Z    seastar::continuation<seastar::internal::promise_base_with_type<void>, seastar::httpd::connection::read()::$_2, seastar::futurize<seastar::future<void>>::type seastar::future<void>::then_wrapped_nrvo<seastar::future<void>, seastar::httpd::connection::read()::$_2>(seastar::httpd::connection::read()::$_2&&)::'lambda'(seastar::internal::promise_base_with_type<void>&&, seastar::httpd::connection::read()::$_2&, seastar::future_state<seastar::internal::monostate>&&), void>
+redpanda-0-1  | 2026-11-13T08:32:28.532550090Z WARN  2026-11-13 08:32:28,532 [shard 0:main] cluster - id_allocator_frontend.cc:270 - can't find {kafka_internal/id_allocator} in the metadata cache
+redpanda-0-1  | 2026-11-13T08:32:28.532727965Z WARN  2026-11-13 08:32:28,532 [shard 0:main] cluster - id_allocator_frontend.cc:270 - can't find {kafka_internal/id_allocator} in the metadata cache
+redpanda-0-1  | 2026-11-13T08:32:28.533410215Z WARN  2026-11-13 08:32:28,533 [shard 0:main] cluster - id_allocator_frontend.cc:247 - can not create kafka_internal/id_allocator topic - error: The topic has already been created
+redpanda-0-1  | 2026-11-13T08:32:28.533482965Z WARN  2026-11-13 08:32:28,533 [shard 0:main] kafka - server.cc:1486 - failed to allocate pid, ec: cluster::errc::topic_not_exists
+redpanda-0-1  | 2026-11-13T08:33:24.684918588Z Reactor stalled for 48 ms on shard 0. Backtrace: 0x8b327bb 0x8b33d5f 0x7ff 0x1046f3 0x8b83c33 0x8b4f8cf 0x8b51f4b 0x8b50127 0x8a59d8b 0x8a588df 0x327d577 0x8fd3867 0x30a1b 0x30afb 0x3276f2f

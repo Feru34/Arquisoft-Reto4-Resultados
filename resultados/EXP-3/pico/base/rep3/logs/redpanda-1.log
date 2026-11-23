@@ -1,0 +1,32 @@
+redpanda-1-1  | 2026-11-13T09:03:27.485139089Z + '[' '' = true ']'
+redpanda-1-1  | 2026-11-13T09:03:27.485145547Z + exec /usr/bin/rpk redpanda start --smp=1 --memory=1G --reserve-memory=0M --overprovisioned --kafka-addr=internal://0.0.0.0:9092 --advertise-kafka-addr=internal://redpanda-1:9092 --rpc-addr=redpanda-1:33145 --advertise-rpc-addr=redpanda-1:33145 --seeds=redpanda-0:33145 --default-log-level=warn --unsafe-bypass-fsync=false
+redpanda-1-1  | 2026-11-13T09:03:27.502109922Z WARNING: This is a setup for development purposes only; in this mode your clusters may run unrealistically fast and data can be corrupted any time your computer shuts down uncleanly.
+redpanda-1-1  | 2026-11-13T09:03:27.502776464Z We'd love to hear about your experience with Redpanda:
+redpanda-1-1  | 2026-11-13T09:03:27.502785714Z https://redpanda.com/feedback
+redpanda-1-1  | 2026-11-13T09:03:27.502788214Z Starting redpanda...
+redpanda-1-1  | 2026-11-13T09:03:27.502790006Z Running:
+redpanda-1-1  | 2026-11-13T09:03:27.502791006Z /opt/redpanda/bin/redpanda redpanda --redpanda-cfg /etc/redpanda/redpanda.yaml --overprovisioned --default-log-level=warn --smp=1 --unsafe-bypass-fsync=false --reserve-memory=0M --memory=1G --lock-memory=false
+redpanda-1-1  | 2026-11-13T09:03:27.596386881Z 
+redpanda-1-1  | 2026-11-13T09:03:27.596405006Z 
+redpanda-1-1  | 2026-11-13T09:03:27.596408423Z Welcome to the Redpanda community!
+redpanda-1-1  | 2026-11-13T09:03:27.596409839Z 
+redpanda-1-1  | 2026-11-13T09:03:27.596410589Z Documentation: https://docs.redpanda.com - Product documentation site
+redpanda-1-1  | 2026-11-13T09:03:27.596413881Z GitHub Discussion: https://github.com/redpanda-data/redpanda/discussions - Longer, more involved discussions
+redpanda-1-1  | 2026-11-13T09:03:27.596415548Z GitHub Issues: https://github.com/redpanda-data/redpanda/issues - Report and track issues with the codebase
+redpanda-1-1  | 2026-11-13T09:03:27.596416381Z Support: https://support.redpanda.com - Contact the support team privately
+redpanda-1-1  | 2026-11-13T09:03:27.596417298Z Product Feedback: https://redpanda.com/feedback - Let us know how we can improve your experience
+redpanda-1-1  | 2026-11-13T09:03:27.596420714Z Slack: https://redpanda.com/slack - Chat about all things Redpanda. Join the conversation!
+redpanda-1-1  | 2026-11-13T09:03:27.596421756Z Twitter: https://twitter.com/redpandadata - All the latest Redpanda news!
+redpanda-1-1  | 2026-11-13T09:03:27.596422673Z 
+redpanda-1-1  | 2026-11-13T09:03:27.596423423Z 
+redpanda-1-1  | 2026-11-13T09:03:27.601990964Z WARN  2026-11-13 09:03:27,601 seastar - Creation of perf_event based stall detector failed: falling back to posix timer: std::__1::system_error (error system:1, perf_event_open() failed: Operation not permitted)
+redpanda-1-1  | 2026-11-13T09:03:27.602012464Z WARN  2026-11-13 09:03:27,601 cpu_profiler - Creation of perf_event based cpu profiler failed: falling back to posix timer: perf_event_open() failed: Operation not permitted
+redpanda-1-1  | 2026-11-13T09:03:27.608977089Z WARN  2026-11-13 09:03:27,608 [shard 0:main] syschecks - Path: `/var/lib/redpanda/data' is on ext4, not XFS. This will probably work, but Redpanda is only tested on XFS and XFS is recommended for best performance.
+redpanda-1-1  | 2026-11-13T09:03:27.635030548Z WARN  2026-11-13 09:03:27,634 [shard 0:main] cluster - cluster_discovery.cc:179 - Error registering UUID 562fb0b7-7328-4521-b4cd-ff2f2c47459e: rpc::errc::method_not_found, retrying
+redpanda-1-1  | 2026-11-13T09:03:33.134871800Z WARN  2026-11-13 09:03:33,134 [shard 0:main] admin_api_server - server.cc:539 - Insecure Admin API listener on 0.0.0.0:9644, consider enabling `admin_api_require_auth`
+redpanda-1-1  | 2026-11-13T09:03:44.308962166Z WARN  2026-11-13 09:03:44,308 [shard 0:main] cluster - id_allocator_frontend.cc:270 - can't find {kafka_internal/id_allocator} in the metadata cache
+redpanda-1-1  | 2026-11-13T09:03:44.308991208Z WARN  2026-11-13 09:03:44,308 [shard 0:main] cluster - id_allocator_frontend.cc:270 - can't find {kafka_internal/id_allocator} in the metadata cache
+redpanda-1-1  | 2026-11-13T09:03:44.309533958Z WARN  2026-11-13 09:03:44,309 [shard 0:main] cluster - id_allocator_frontend.cc:247 - can not create kafka_internal/id_allocator topic - error: The topic has already been created
+redpanda-1-1  | 2026-11-13T09:03:44.309536750Z WARN  2026-11-13 09:03:44,309 [shard 0:main] kafka - server.cc:1486 - failed to allocate pid, ec: cluster::errc::topic_not_exists
+redpanda-1-1  | 2026-11-13T09:03:44.309609916Z WARN  2026-11-13 09:03:44,309 [shard 0:main] cluster - id_allocator_frontend.cc:247 - can not create kafka_internal/id_allocator topic - error: The topic has already been created
+redpanda-1-1  | 2026-11-13T09:03:44.309611791Z WARN  2026-11-13 09:03:44,309 [shard 0:main] kafka - server.cc:1486 - failed to allocate pid, ec: cluster::errc::topic_not_exists

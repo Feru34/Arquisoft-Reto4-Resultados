@@ -1,0 +1,250 @@
+{
+ "exp": "EXP-3",
+ "escenario": "pico",
+ "variante": "tactica",
+ "rep": 4,
+ "seed": 4000,
+ "cfg": {
+  "brokers": [
+   0,
+   1,
+   2
+  ],
+  "rf": 3,
+  "tel_parts": 24,
+  "panic_lane": 1,
+  "ack": "replicated",
+  "commit": "after_write",
+  "receptors": [
+   1,
+   2,
+   3
+  ],
+  "despachadores": [
+   1,
+   2
+  ],
+  "haproxy": "haproxy-3.cfg"
+ },
+ "carga": {
+  "PROFILE": "30:1500,300:5000",
+  "TAIL_RATE": 1500,
+  "TAIL_MAX_S": 600,
+  "DRAIN_MAX_S": 90
+ },
+ "inicio": "2026-11-13T04:19:49.832498",
+ "setup_s": 23.9,
+ "generador": {
+  "acked": 1636296,
+  "attempts": 1639666,
+  "durationS": 390.881979885,
+  "emitted": 1636296,
+  "endUs": 1794562004847259,
+  "failedAttempts": 3370,
+  "panics": 0,
+  "profile": "30:1500,300:5000",
+  "startUs": 1794561613958748,
+  "tailRate": 1500,
+  "trucks": 18000
+ },
+ "eventos": [
+  {
+   "ts": 1794561613998028,
+   "kind": "generador_inicia",
+   "gen_start_us": 1794561613958749
+  },
+  {
+   "ts": 1794562004823787,
+   "kind": "monitor_cola_normal_detiene_generador",
+   "backlog": 8,
+   "gen_elapsed": 390.856895218
+  },
+  {
+   "ts": 1794562009084231,
+   "kind": "generador_termina"
+  }
+ ],
+ "verificacion": {
+  "conteos": {
+   "enviadas": 1636296,
+   "telemetria": 1636296,
+   "panicos": 0,
+   "atrasadas": 0,
+   "acusadas": 1636296,
+   "nunca_enviadas": 0,
+   "no_acusadas": 0,
+   "perdidas": 0,
+   "perdidas_acusadas": 0,
+   "perdidas_tel": 0,
+   "perdidas_panico": 0,
+   "perdidas_panico_acusadas": 0,
+   "panicos_guardados": 0,
+   "duplicados": 0,
+   "duplicados_panico": 0,
+   "reintentos": 3370,
+   "detectadas": 1636296,
+   "no_detectadas": 0,
+   "det_duplicadas": 0,
+   "tel_pico": 1499972,
+   "tel_pico_detectadas": 1499972,
+   "guardadas_fuera_de_registro": 0,
+   "fuera_de_orden": 0,
+   "reentregas_tardias": 0,
+   "fuera_de_orden_worker": 0,
+   "panicos_guardados_pct": null,
+   "por_receptor": {
+    "1": 545356,
+    "2": 545217,
+    "3": 545723
+   },
+   "por_particion": {
+    "0": 68903,
+    "1": 68261,
+    "2": 65909,
+    "3": 67716,
+    "4": 66906,
+    "5": 69542,
+    "6": 67823,
+    "7": 67545,
+    "8": 67904,
+    "9": 68270,
+    "10": 69184,
+    "11": 68916,
+    "12": 70083,
+    "13": 65997,
+    "14": 68168,
+    "15": 66908,
+    "16": 67544,
+    "17": 67908,
+    "18": 69460,
+    "19": 67720,
+    "20": 67901,
+    "21": 69006,
+    "22": 68453,
+    "23": 70269
+   },
+   "panico_por_escritor": {},
+   "anomalias": {
+    "0": 1614900,
+    "1": 8015,
+    "2": 3183,
+    "3": 10198
+   }
+  },
+  "latencias_s": {
+   "guardado_desde_envio": {
+    "n": 1636296,
+    "min": 0.000384,
+    "p50": 0.00409,
+    "p95": 0.302428,
+    "p99": 0.986422,
+    "p999": 3.544503,
+    "max": 4.693984,
+    "mean": 0.06196348449730367
+   },
+   "guardado_desde_origen": {
+    "n": 1636296,
+    "min": 0.000409,
+    "p50": 0.00448,
+    "p95": 0.303133,
+    "p99": 0.987001,
+    "p999": 3.545585,
+    "max": 4.695007,
+    "mean": 0.062410292003402805
+   },
+   "guardado_tel_puntual_desde_envio": {
+    "n": 1636296,
+    "min": 0.000384,
+    "p50": 0.00409,
+    "p95": 0.302428,
+    "p99": 0.986422,
+    "p999": 3.544503,
+    "max": 4.693984,
+    "mean": 0.06196348449730367
+   },
+   "guardado_tel_atrasada_desde_envio": {
+    "n": 0,
+    "min": null,
+    "p50": null,
+    "p95": null,
+    "p99": null,
+    "p999": null,
+    "max": null,
+    "mean": null
+   },
+   "guardado_tel_atrasada_desde_origen": {
+    "n": 0,
+    "min": null,
+    "p50": null,
+    "p95": null,
+    "p99": null,
+    "p999": null,
+    "max": null,
+    "mean": null
+   },
+   "acuse_desde_envio": {
+    "n": 1636296,
+    "min": 0.000367,
+    "p50": 0.003785,
+    "p95": 0.324993,
+    "p99": 1.004953,
+    "p999": 3.557496,
+    "max": 4.687937,
+    "mean": 0.06472219000413128
+   },
+   "panico_guardado_desde_origen": {
+    "n": 0,
+    "min": null,
+    "p50": null,
+    "p95": null,
+    "p99": null,
+    "p999": null,
+    "max": null,
+    "mean": null
+   },
+   "panico_acuse_desde_origen": {
+    "n": 0,
+    "min": null,
+    "p50": null,
+    "p95": null,
+    "p99": null,
+    "p999": null,
+    "max": null,
+    "mean": null
+   },
+   "deteccion_desde_origen": {
+    "n": 1636296,
+    "min": 0.002564,
+    "p50": 0.010008,
+    "p95": 0.514454,
+    "p99": 1.307616,
+    "p999": 3.811697,
+    "max": 5.25035,
+    "mean": 0.10250565818837179
+   },
+   "deteccion_desde_origen_pico": {
+    "n": 1499972,
+    "min": 0.002931,
+    "p50": 0.010472,
+    "p95": 0.513181,
+    "p99": 1.178836,
+    "p999": 1.793112,
+    "max": 2.239949,
+    "mean": 0.09874133494691902
+   },
+   "deteccion_desde_guardado": {
+    "n": 1636296,
+    "min": 0.002092,
+    "p50": 0.005383,
+    "p95": 0.221651,
+    "p99": 0.540098,
+    "p999": 0.795434,
+    "max": 1.63129,
+    "mean": 0.04009536618496898
+   }
+  }
+ },
+ "ok": true,
+ "fin": "2026-11-13T04:27:19.333430",
+ "duracion_s": 449.5
+}
