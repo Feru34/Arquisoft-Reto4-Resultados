@@ -1,0 +1,68 @@
+redpanda-1-1  | 2026-11-14T15:27:18.574382918Z + '[' '' = true ']'
+redpanda-1-1  | 2026-11-14T15:27:18.574433876Z + exec /usr/bin/rpk redpanda start --smp=1 --memory=1G --reserve-memory=0M --overprovisioned --kafka-addr=internal://0.0.0.0:9092 --advertise-kafka-addr=internal://redpanda-1:9092 --rpc-addr=redpanda-1:33145 --advertise-rpc-addr=redpanda-1:33145 --seeds=redpanda-0:33145 --default-log-level=warn --unsafe-bypass-fsync=false
+redpanda-1-1  | 2026-11-14T15:27:18.606477126Z WARNING: This is a setup for development purposes only; in this mode your clusters may run unrealistically fast and data can be corrupted any time your computer shuts down uncleanly.
+redpanda-1-1  | 2026-11-14T15:27:18.608622918Z We'd love to hear about your experience with Redpanda:
+redpanda-1-1  | 2026-11-14T15:27:18.608636835Z https://redpanda.com/feedback
+redpanda-1-1  | 2026-11-14T15:27:18.608640043Z Starting redpanda...
+redpanda-1-1  | 2026-11-14T15:27:18.608642876Z Running:
+redpanda-1-1  | 2026-11-14T15:27:18.608644585Z /opt/redpanda/bin/redpanda redpanda --redpanda-cfg /etc/redpanda/redpanda.yaml --overprovisioned --memory=1G --smp=1 --lock-memory=false --reserve-memory=0M --unsafe-bypass-fsync=false --default-log-level=warn
+redpanda-1-1  | 2026-11-14T15:27:18.688673251Z 
+redpanda-1-1  | 2026-11-14T15:27:18.688683960Z 
+redpanda-1-1  | 2026-11-14T15:27:18.688687126Z Welcome to the Redpanda community!
+redpanda-1-1  | 2026-11-14T15:27:18.688688418Z 
+redpanda-1-1  | 2026-11-14T15:27:18.688689418Z Documentation: https://docs.redpanda.com - Product documentation site
+redpanda-1-1  | 2026-11-14T15:27:18.688690418Z GitHub Discussion: https://github.com/redpanda-data/redpanda/discussions - Longer, more involved discussions
+redpanda-1-1  | 2026-11-14T15:27:18.688691376Z GitHub Issues: https://github.com/redpanda-data/redpanda/issues - Report and track issues with the codebase
+redpanda-1-1  | 2026-11-14T15:27:18.688692168Z Support: https://support.redpanda.com - Contact the support team privately
+redpanda-1-1  | 2026-11-14T15:27:18.688693043Z Product Feedback: https://redpanda.com/feedback - Let us know how we can improve your experience
+redpanda-1-1  | 2026-11-14T15:27:18.688694460Z Slack: https://redpanda.com/slack - Chat about all things Redpanda. Join the conversation!
+redpanda-1-1  | 2026-11-14T15:27:18.688695293Z Twitter: https://twitter.com/redpandadata - All the latest Redpanda news!
+redpanda-1-1  | 2026-11-14T15:27:18.688696085Z 
+redpanda-1-1  | 2026-11-14T15:27:18.688698710Z 
+redpanda-1-1  | 2026-11-14T15:27:18.695540126Z WARN  2026-11-14 15:27:18,695 seastar - Creation of perf_event based stall detector failed: falling back to posix timer: std::__1::system_error (error system:1, perf_event_open() failed: Operation not permitted)
+redpanda-1-1  | 2026-11-14T15:27:18.695721168Z WARN  2026-11-14 15:27:18,695 cpu_profiler - Creation of perf_event based cpu profiler failed: falling back to posix timer: perf_event_open() failed: Operation not permitted
+redpanda-1-1  | 2026-11-14T15:27:18.703957126Z WARN  2026-11-14 15:27:18,703 [shard 0:main] syschecks - Path: `/var/lib/redpanda/data' is on ext4, not XFS. This will probably work, but Redpanda is only tested on XFS and XFS is recommended for best performance.
+redpanda-1-1  | 2026-11-14T15:27:19.125907043Z WARN  2026-11-14 15:27:19,125 [shard 0:main] admin_api_server - server.cc:539 - Insecure Admin API listener on 0.0.0.0:9644, consider enabling `admin_api_require_auth`
+redpanda-1-1  | 2026-11-14T15:27:38.247716802Z WARN  2026-11-14 15:27:38,247 [shard 0:main] cluster - id_allocator_frontend.cc:270 - can't find {kafka_internal/id_allocator} in the metadata cache
+redpanda-1-1  | 2026-11-14T15:27:38.247916886Z WARN  2026-11-14 15:27:38,247 [shard 0:main] cluster - id_allocator_frontend.cc:270 - can't find {kafka_internal/id_allocator} in the metadata cache
+redpanda-1-1  | 2026-11-14T15:27:38.249397552Z WARN  2026-11-14 15:27:38,249 [shard 0:main] cluster - id_allocator_frontend.cc:247 - can not create kafka_internal/id_allocator topic - error: The topic has already been created
+redpanda-1-1  | 2026-11-14T15:27:38.249402094Z WARN  2026-11-14 15:27:38,249 [shard 0:main] kafka - server.cc:1486 - failed to allocate pid, ec: cluster::errc::topic_not_exists
+redpanda-1-1  | 2026-11-14T15:28:42.907189138Z WARN  2026-11-14 15:28:42,906 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:28:43.930876680Z WARN  2026-11-14 15:28:43,930 [shard 0:main] cluster - health_monitor_backend.cc:406 - unable to get node health report from 2 - rpc::errc::exponential_backoff, marking node as down
+redpanda-1-1  | 2026-11-14T15:28:45.910063625Z WARN  2026-11-14 15:28:45,909 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:28:48.910955960Z WARN  2026-11-14 15:28:48,910 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:28:51.911481128Z WARN  2026-11-14 15:28:51,911 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:28:54.911572546Z WARN  2026-11-14 15:28:54,911 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:28:57.912465631Z WARN  2026-11-14 15:28:57,912 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:00.912937132Z WARN  2026-11-14 15:29:00,912 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:03.915023509Z WARN  2026-11-14 15:29:03,914 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:06.915034177Z WARN  2026-11-14 15:29:06,914 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:09.915492428Z WARN  2026-11-14 15:29:09,914 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:12.915334638Z WARN  2026-11-14 15:29:12,915 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:15.914725208Z WARN  2026-11-14 15:29:15,914 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:18.918712876Z WARN  2026-11-14 15:29:18,918 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:21.919710586Z WARN  2026-11-14 15:29:21,919 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:24.919811921Z WARN  2026-11-14 15:29:24,919 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:27.919979714Z WARN  2026-11-14 15:29:27,919 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:30.920077507Z WARN  2026-11-14 15:29:30,919 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:33.920113717Z WARN  2026-11-14 15:29:33,919 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:36.920296468Z WARN  2026-11-14 15:29:36,920 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:39.920798345Z WARN  2026-11-14 15:29:39,920 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:42.923212180Z WARN  2026-11-14 15:29:42,922 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:45.924084000Z WARN  2026-11-14 15:29:45,923 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:48.924488501Z WARN  2026-11-14 15:29:48,924 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:51.925369545Z WARN  2026-11-14 15:29:51,925 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:54.925711879Z WARN  2026-11-14 15:29:54,925 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:29:57.926132506Z WARN  2026-11-14 15:29:57,926 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:30:00.926616007Z WARN  2026-11-14 15:30:00,926 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:30:03.926679509Z WARN  2026-11-14 15:30:03,926 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:30:06.926875218Z WARN  2026-11-14 15:30:06,926 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:30:09.928789178Z WARN  2026-11-14 15:30:09,928 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:30:12.930524138Z WARN  2026-11-14 15:30:12,930 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:30:15.930967042Z WARN  2026-11-14 15:30:15,930 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:30:18.933226918Z WARN  2026-11-14 15:30:18,931 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:30:21.932341461Z WARN  2026-11-14 15:30:21,931 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:30:24.932401796Z WARN  2026-11-14 15:30:24,932 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:30:27.934712214Z WARN  2026-11-14 15:30:27,934 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:30:30.934874882Z WARN  2026-11-14 15:30:30,934 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
+redpanda-1-1  | 2026-11-14T15:30:33.936244217Z WARN  2026-11-14 15:30:33,936 [shard 0:main] cluster - metadata_dissemination_service.cc:436 - Error sending metadata update rpc::errc::exponential_backoff to 2
