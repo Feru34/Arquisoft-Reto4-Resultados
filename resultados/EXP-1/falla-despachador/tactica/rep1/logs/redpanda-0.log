@@ -1,0 +1,32 @@
+redpanda-0-1  | 2026-11-13T05:17:34.502419760Z + '[' '' = true ']'
+redpanda-0-1  | 2026-11-13T05:17:34.502432343Z + exec /usr/bin/rpk redpanda start --smp=1 --memory=1G --reserve-memory=0M --overprovisioned --kafka-addr=internal://0.0.0.0:9092 --advertise-kafka-addr=internal://redpanda-0:9092 --rpc-addr=redpanda-0:33145 --advertise-rpc-addr=redpanda-0:33145 --default-log-level=warn --unsafe-bypass-fsync=false
+redpanda-0-1  | 2026-11-13T05:17:34.518682218Z WARNING: This is a setup for development purposes only; in this mode your clusters may run unrealistically fast and data can be corrupted any time your computer shuts down uncleanly.
+redpanda-0-1  | 2026-11-13T05:17:34.519341176Z We'd love to hear about your experience with Redpanda:
+redpanda-0-1  | 2026-11-13T05:17:34.519352385Z https://redpanda.com/feedback
+redpanda-0-1  | 2026-11-13T05:17:34.519353885Z Starting redpanda...
+redpanda-0-1  | 2026-11-13T05:17:34.519355010Z Running:
+redpanda-0-1  | 2026-11-13T05:17:34.519355968Z /opt/redpanda/bin/redpanda redpanda --redpanda-cfg /etc/redpanda/redpanda.yaml --default-log-level=warn --reserve-memory=0M --lock-memory=false --smp=1 --unsafe-bypass-fsync=false --memory=1G --overprovisioned
+redpanda-0-1  | 2026-11-13T05:17:34.583813551Z 
+redpanda-0-1  | 2026-11-13T05:17:34.583819135Z 
+redpanda-0-1  | 2026-11-13T05:17:34.583819635Z Welcome to the Redpanda community!
+redpanda-0-1  | 2026-11-13T05:17:34.583820635Z 
+redpanda-0-1  | 2026-11-13T05:17:34.583821093Z Documentation: https://docs.redpanda.com - Product documentation site
+redpanda-0-1  | 2026-11-13T05:17:34.583822176Z GitHub Discussion: https://github.com/redpanda-data/redpanda/discussions - Longer, more involved discussions
+redpanda-0-1  | 2026-11-13T05:17:34.583825135Z GitHub Issues: https://github.com/redpanda-data/redpanda/issues - Report and track issues with the codebase
+redpanda-0-1  | 2026-11-13T05:17:34.583825676Z Support: https://support.redpanda.com - Contact the support team privately
+redpanda-0-1  | 2026-11-13T05:17:34.583826218Z Product Feedback: https://redpanda.com/feedback - Let us know how we can improve your experience
+redpanda-0-1  | 2026-11-13T05:17:34.583827051Z Slack: https://redpanda.com/slack - Chat about all things Redpanda. Join the conversation!
+redpanda-0-1  | 2026-11-13T05:17:34.583827551Z Twitter: https://twitter.com/redpandadata - All the latest Redpanda news!
+redpanda-0-1  | 2026-11-13T05:17:34.583828051Z 
+redpanda-0-1  | 2026-11-13T05:17:34.583828426Z 
+redpanda-0-1  | 2026-11-13T05:17:34.587644926Z WARN  2026-11-13 05:17:34,587 seastar - Creation of perf_event based stall detector failed: falling back to posix timer: std::__1::system_error (error system:1, perf_event_open() failed: Operation not permitted)
+redpanda-0-1  | 2026-11-13T05:17:34.587785010Z WARN  2026-11-13 05:17:34,587 cpu_profiler - Creation of perf_event based cpu profiler failed: falling back to posix timer: perf_event_open() failed: Operation not permitted
+redpanda-0-1  | 2026-11-13T05:17:34.592301801Z WARN  2026-11-13 05:17:34,592 [shard 0:main] syschecks - Path: `/var/lib/redpanda/data' is on ext4, not XFS. This will probably work, but Redpanda is only tested on XFS and XFS is recommended for best performance.
+redpanda-0-1  | 2026-11-13T05:17:34.848018968Z WARN  2026-11-13 05:17:34,847 [shard 0:main] admin_api_server - server.cc:539 - Insecure Admin API listener on 0.0.0.0:9644, consider enabling `admin_api_require_auth`
+redpanda-0-1  | 2026-11-13T05:17:46.970124626Z WARN  2026-11-13 05:17:46,970 [shard 0:admi] seastar_memory - oversized allocation: 196608 bytes. This is non-fatal, but could lead to latency and/or fragmentation issues. Please report: at 0x8d9d71b 0x8a88883 0x8a939f7 0x3354ac3 /opt/redpanda/lib/libc++.so.1+0x646c7 /opt/redpanda/lib/libc++.so.1+0x68af3 0x3d75eb7 0x3d752fb 0x3d74c5f 0x3d704bf 0x38905ef 0x8c7ce5f 0x8c7c9cf 0x3aea19f 0x8c842df 0x8c46ddf 0x8c585c3 0x8c565e3 0x8c53773 0x8c5c0cf 0x8b4f8cf 0x8b51f4b 0x8b50127 0x8a59d8b 0x8a588df 0x327d577 0x8fd3867 /opt/redpanda/lib/libc.so.6+0x30a1b /opt/redpanda/lib/libc.so.6+0x30afb 0x3276f2f
+redpanda-0-1  | 2026-11-13T05:17:46.970143751Z    --------
+redpanda-0-1  | 2026-11-13T05:17:46.970144668Z    seastar::continuation<seastar::internal::promise_base_with_type<void>, seastar::httpd::connection::read_one()::$_0, seastar::future<void> seastar::future<void>::then_impl_nrvo<seastar::httpd::connection::read_one()::$_0, seastar::future<void>>(seastar::httpd::connection::read_one()::$_0&&)::'lambda'(seastar::internal::promise_base_with_type<void>&&, seastar::httpd::connection::read_one()::$_0&, seastar::future_state<seastar::internal::monostate>&&), void>
+redpanda-0-1  | 2026-11-13T05:17:46.970145710Z    --------
+redpanda-0-1  | 2026-11-13T05:17:46.970151960Z    seastar::internal::do_until_state<seastar::httpd::connection::read()::$_0, seastar::httpd::connection::read()::$_1>
+redpanda-0-1  | 2026-11-13T05:17:46.970152918Z    --------
+redpanda-0-1  | 2026-11-13T05:17:46.970153418Z    seastar::continuation<seastar::internal::promise_base_with_type<void>, seastar::httpd::connection::read()::$_2, seastar::futurize<seastar::future<void>>::type seastar::future<void>::then_wrapped_nrvo<seastar::future<void>, seastar::httpd::connection::read()::$_2>(seastar::httpd::connection::read()::$_2&&)::'lambda'(seastar::internal::promise_base_with_type<void>&&, seastar::httpd::connection::read()::$_2&, seastar::future_state<seastar::internal::monostate>&&), void>
