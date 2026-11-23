@@ -1,0 +1,28 @@
+redpanda-2-1  | 2026-11-14T16:36:49.432040543Z + '[' '' = true ']'
+redpanda-2-1  | 2026-11-14T16:36:49.432054793Z + exec /usr/bin/rpk redpanda start --smp=1 --memory=1G --reserve-memory=0M --overprovisioned --kafka-addr=internal://0.0.0.0:9092 --advertise-kafka-addr=internal://redpanda-2:9092 --rpc-addr=redpanda-2:33145 --advertise-rpc-addr=redpanda-2:33145 --seeds=redpanda-0:33145 --default-log-level=warn --unsafe-bypass-fsync=false
+redpanda-2-1  | 2026-11-14T16:36:49.459680085Z WARNING: This is a setup for development purposes only; in this mode your clusters may run unrealistically fast and data can be corrupted any time your computer shuts down uncleanly.
+redpanda-2-1  | 2026-11-14T16:36:49.460993126Z We'd love to hear about your experience with Redpanda:
+redpanda-2-1  | 2026-11-14T16:36:49.461002626Z https://redpanda.com/feedback
+redpanda-2-1  | 2026-11-14T16:36:49.461006085Z Starting redpanda...
+redpanda-2-1  | 2026-11-14T16:36:49.461007460Z Running:
+redpanda-2-1  | 2026-11-14T16:36:49.461008543Z /opt/redpanda/bin/redpanda redpanda --redpanda-cfg /etc/redpanda/redpanda.yaml --default-log-level=warn --smp=1 --lock-memory=false --reserve-memory=0M --overprovisioned --unsafe-bypass-fsync=false --memory=1G
+redpanda-2-1  | 2026-11-14T16:36:49.539084126Z 
+redpanda-2-1  | 2026-11-14T16:36:49.539099293Z 
+redpanda-2-1  | 2026-11-14T16:36:49.539102043Z Welcome to the Redpanda community!
+redpanda-2-1  | 2026-11-14T16:36:49.539103251Z 
+redpanda-2-1  | 2026-11-14T16:36:49.539103960Z Documentation: https://docs.redpanda.com - Product documentation site
+redpanda-2-1  | 2026-11-14T16:36:49.539105085Z GitHub Discussion: https://github.com/redpanda-data/redpanda/discussions - Longer, more involved discussions
+redpanda-2-1  | 2026-11-14T16:36:49.539108251Z GitHub Issues: https://github.com/redpanda-data/redpanda/issues - Report and track issues with the codebase
+redpanda-2-1  | 2026-11-14T16:36:49.539109251Z Support: https://support.redpanda.com - Contact the support team privately
+redpanda-2-1  | 2026-11-14T16:36:49.539109960Z Product Feedback: https://redpanda.com/feedback - Let us know how we can improve your experience
+redpanda-2-1  | 2026-11-14T16:36:49.539110876Z Slack: https://redpanda.com/slack - Chat about all things Redpanda. Join the conversation!
+redpanda-2-1  | 2026-11-14T16:36:49.539111501Z Twitter: https://twitter.com/redpandadata - All the latest Redpanda news!
+redpanda-2-1  | 2026-11-14T16:36:49.539112793Z 
+redpanda-2-1  | 2026-11-14T16:36:49.539116293Z 
+redpanda-2-1  | 2026-11-14T16:36:49.550342543Z WARN  2026-11-14 16:36:49,550 seastar - Creation of perf_event based stall detector failed: falling back to posix timer: std::__1::system_error (error system:1, perf_event_open() failed: Operation not permitted)
+redpanda-2-1  | 2026-11-14T16:36:49.550351501Z WARN  2026-11-14 16:36:49,550 cpu_profiler - Creation of perf_event based cpu profiler failed: falling back to posix timer: perf_event_open() failed: Operation not permitted
+redpanda-2-1  | 2026-11-14T16:36:49.561068960Z WARN  2026-11-14 16:36:49,560 [shard 0:main] syschecks - Path: `/var/lib/redpanda/data' is on ext4, not XFS. This will probably work, but Redpanda is only tested on XFS and XFS is recommended for best performance.
+redpanda-2-1  | 2026-11-14T16:36:49.870556252Z WARN  2026-11-14 16:36:49,870 [shard 0:main] admin_api_server - server.cc:539 - Insecure Admin API listener on 0.0.0.0:9644, consider enabling `admin_api_require_auth`
+redpanda-2-1  | 2026-11-14T16:37:10.146344553Z WARN  2026-11-14 16:37:10,146 [shard 0:main] cluster - id_allocator_frontend.cc:270 - can't find {kafka_internal/id_allocator} in the metadata cache
+redpanda-2-1  | 2026-11-14T16:37:10.147960303Z WARN  2026-11-14 16:37:10,147 [shard 0:main] cluster - id_allocator_frontend.cc:247 - can not create kafka_internal/id_allocator topic - error: The topic has already been created
+redpanda-2-1  | 2026-11-14T16:37:10.147972470Z WARN  2026-11-14 16:37:10,147 [shard 0:main] kafka - server.cc:1486 - failed to allocate pid, ec: cluster::errc::topic_not_exists
