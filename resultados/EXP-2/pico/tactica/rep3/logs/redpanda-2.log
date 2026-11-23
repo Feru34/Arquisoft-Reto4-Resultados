@@ -1,0 +1,26 @@
+redpanda-2-1  | 2026-11-13T07:23:21.910777503Z + '[' '' = true ']'
+redpanda-2-1  | 2026-11-13T07:23:21.910787878Z + exec /usr/bin/rpk redpanda start --smp=1 --memory=1G --reserve-memory=0M --overprovisioned --kafka-addr=internal://0.0.0.0:9092 --advertise-kafka-addr=internal://redpanda-2:9092 --rpc-addr=redpanda-2:33145 --advertise-rpc-addr=redpanda-2:33145 --seeds=redpanda-0:33145 --default-log-level=warn --unsafe-bypass-fsync=false
+redpanda-2-1  | 2026-11-13T07:23:21.928186170Z WARNING: This is a setup for development purposes only; in this mode your clusters may run unrealistically fast and data can be corrupted any time your computer shuts down uncleanly.
+redpanda-2-1  | 2026-11-13T07:23:21.929020295Z We'd love to hear about your experience with Redpanda:
+redpanda-2-1  | 2026-11-13T07:23:21.929029087Z https://redpanda.com/feedback
+redpanda-2-1  | 2026-11-13T07:23:21.929032753Z Starting redpanda...
+redpanda-2-1  | 2026-11-13T07:23:21.929034003Z Running:
+redpanda-2-1  | 2026-11-13T07:23:21.929035128Z /opt/redpanda/bin/redpanda redpanda --redpanda-cfg /etc/redpanda/redpanda.yaml --smp=1 --unsafe-bypass-fsync=false --memory=1G --overprovisioned --default-log-level=warn --lock-memory=false --reserve-memory=0M
+redpanda-2-1  | 2026-11-13T07:23:21.997521795Z 
+redpanda-2-1  | 2026-11-13T07:23:21.997534003Z 
+redpanda-2-1  | 2026-11-13T07:23:21.997535378Z Welcome to the Redpanda community!
+redpanda-2-1  | 2026-11-13T07:23:21.997537295Z 
+redpanda-2-1  | 2026-11-13T07:23:21.997540378Z Documentation: https://docs.redpanda.com - Product documentation site
+redpanda-2-1  | 2026-11-13T07:23:21.997541545Z GitHub Discussion: https://github.com/redpanda-data/redpanda/discussions - Longer, more involved discussions
+redpanda-2-1  | 2026-11-13T07:23:21.997542837Z GitHub Issues: https://github.com/redpanda-data/redpanda/issues - Report and track issues with the codebase
+redpanda-2-1  | 2026-11-13T07:23:21.997543712Z Support: https://support.redpanda.com - Contact the support team privately
+redpanda-2-1  | 2026-11-13T07:23:21.997545712Z Product Feedback: https://redpanda.com/feedback - Let us know how we can improve your experience
+redpanda-2-1  | 2026-11-13T07:23:21.997546795Z Slack: https://redpanda.com/slack - Chat about all things Redpanda. Join the conversation!
+redpanda-2-1  | 2026-11-13T07:23:21.997547587Z Twitter: https://twitter.com/redpandadata - All the latest Redpanda news!
+redpanda-2-1  | 2026-11-13T07:23:21.997548378Z 
+redpanda-2-1  | 2026-11-13T07:23:21.997549128Z 
+redpanda-2-1  | 2026-11-13T07:23:22.003599545Z WARN  2026-11-13 07:23:22,003 seastar - Creation of perf_event based stall detector failed: falling back to posix timer: std::__1::system_error (error system:1, perf_event_open() failed: Operation not permitted)
+redpanda-2-1  | 2026-11-13T07:23:22.003610795Z WARN  2026-11-13 07:23:22,003 cpu_profiler - Creation of perf_event based cpu profiler failed: falling back to posix timer: perf_event_open() failed: Operation not permitted
+redpanda-2-1  | 2026-11-13T07:23:22.010156712Z WARN  2026-11-13 07:23:22,010 [shard 0:main] syschecks - Path: `/var/lib/redpanda/data' is on ext4, not XFS. This will probably work, but Redpanda is only tested on XFS and XFS is recommended for best performance.
+redpanda-2-1  | 2026-11-13T07:23:22.041175462Z WARN  2026-11-13 07:23:22,041 [shard 0:main] cluster - cluster_discovery.cc:171 - Error registering node UUID af5fa32b-7b91-4259-bcdb-ad6220df60ba, retrying: std::__1::system_error (error system:111, Connection refused)
+redpanda-2-1  | 2026-11-13T07:23:27.503789048Z WARN  2026-11-13 07:23:27,503 [shard 0:main] admin_api_server - server.cc:539 - Insecure Admin API listener on 0.0.0.0:9644, consider enabling `admin_api_require_auth`
