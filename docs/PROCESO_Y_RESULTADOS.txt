@@ -1,0 +1,266 @@
+PROCESO Y RESULTADOS — Reto 4, caso LogiSur Andina (ARTI 4109)
+Experimentos EXP-1, EXP-2 y EXP-3 (+ extras EXP-1b y EXP-1c), ejecutados en local
+Documento de trabajo para documentar cómo se construyeron los resultados.
+Fechas: noche del 13 al 14 de noviembre de 2026 (plan principal) y mañana del 14 (extras).
+=====================================================================================
+
+ÍNDICE
+  1. Qué se pidió y qué se probó
+  2. Entorno de ejecución
+  3. Prototipo construido (arquitectura y tech stack)
+  4. Variantes: táctica vs. línea base
+  5. Cómo se ejecuta una corrida (orquestador)
+  6. Cómo se miden y verifican los resultados
+  7. Problemas encontrados y correcciones durante la noche
+  8. Resultados finales EXP-1, EXP-2, EXP-3
+  9. Pruebas extra EXP-1b y EXP-1c
+ 10. Dónde está cada cosa (archivos)
+ 11. Ajustes recomendados para la presentación
+ 12. Cómo volver a correr todo
+
+-------------------------------------------------------------------------------------
+1. QUÉ SE PIDIÓ Y QUÉ SE PROBÓ
+-------------------------------------------------------------------------------------
+Fuente: "caso LogiSur-Andina-2.pdf". Se ejecutaron las 3 primeras pruebas del plan,
+todo en local, guardando todos los resultados (contenedores, logs, tablas, métricas):
+
+  EXP-1 → DIS-1 (disponibilidad): si un componente se cae MIENTRAS procesa pánicos,
+          no se pierde ningún pánico (meta ≥ 99,99 % guardados).
+          Tácticas: redundancia activa (réplicas), heartbeat/latido, acuse solo
+          después de replicar/persistir.
+  EXP-2 → LAT-1 (latencia de guardado): en el pico, cada señal queda guardada en
+          < 1 min (p99), sin pérdidas, incluso señales atrasadas (late).
+  EXP-3 → LAT-2 (latencia de procesamiento): en el pico, cada señal se procesa
+          (detección de anomalías) en < 5 s (p99), sin desorden por camión, y la cola
+          vuelve a la normalidad tras el pico.
+          Tácticas: particionamiento por camión (24 colas) + concurrencia (1 worker por cola).
+
+Cada experimento compara TÁCTICA vs. LÍNEA BASE, con 5 repeticiones por variante
+(el PDF decía 2 en un lado y 5 en otro; se usaron 5).
+
+-------------------------------------------------------------------------------------
+2. ENTORNO DE EJECUCIÓN
+-------------------------------------------------------------------------------------
+  - MacBook con Apple M5, 10 núcleos, 16 GB RAM, macOS (Darwin 25.6.0).
+  - Docker Desktop 29.9.2 (VM con 10 CPU y 7,7 GB), Docker Compose v5.6.1.
+  - Go no instalado localmente: se compila dentro de contenedor (golang:1.23-alpine).
+  - Python 3 (solo biblioteca estándar) para orquestar y analizar.
+  - Todo en una sola máquina → las cifras absolutas son indicativas; lo relevante
+    es la comparación táctica vs. línea base bajo la misma carga.
+  - Detalle completo del entorno: resultados/entorno.json
+
+-------------------------------------------------------------------------------------
+3. PROTOTIPO CONSTRUIDO (ARQUITECTURA Y TECH STACK)
+-------------------------------------------------------------------------------------
+Carpeta: prototipo/   (docker-compose proyecto "lsa")
+
+  Camiones (generador) → HAProxy → Receptores (×3) → Redpanda (Kafka, ×3 brokers)
+       → canal de pánicos → Despachadores (×2, grupo de consumidores) → PostgreSQL
+       → canal de telemetría (24 particiones) → Procesador (24 pipelines) → PostgreSQL
+
+Tech stack:
+  - Lenguaje de los servicios: Go 1.23 (módulo "lsa").
+      * Cliente Kafka: franz-go v1.18.0
+      * PostgreSQL: pgx v5.7.1 (inserción con COPY)
+      * Dockerfile multi-stage → imagen lsa-app:latest
+  - Broker de mensajes: Redpanda v24.2.7 (compatible Kafka), 3 nodos,
+    --smp=1 --memory=1G --overprovisioned, fsync ACTIVADO (unsafe-bypass-fsync=false).
+  - Base de datos: PostgreSQL 16 (postgres:16-alpine). Tablas telemetria, panico,
+    deteccion, enviado; sin índices ni unicidad (para detectar duplicados al verificar);
+    saved_at con clock_timestamp en microsegundos.
+  - Balanceador: HAProxy 3.0 (check cada 1 s, fall 2; stats en :8404).
+  - Orquestación y análisis: Python 3 (run.py, analyze.py), informe HTML con SVG propio.
+
+Servicios (código en prototipo/go/cmd/):
+  - receptor: recibe señales HTTP de los camiones y las publica en Redpanda.
+      ACK_MODE=replicated (táctica): acks=all, espera réplica, timeout 4 s → 503.
+      ACK_MODE=immediate (base): responde al camión de inmediato, publica asíncrono
+        con acks=1 (linger 50 ms) → "acuse antes de persistir".
+      Particionado manual: FNV-1a(truck_id) mod n.
+  - despachador: consume el topic de pánicos (grupo "despachadores") y guarda el caso.
+      COMMIT_MODE=after_write (táctica): confirma offset SOLO tras guardar en PostgreSQL.
+      COMMIT_MODE=auto (base): auto-commit cada 1 s + escritura en lotes cada 500 ms.
+      Sesión/latido configurables (por defecto 6 s / 1 s).
+  - procesador: N pipelines; por cola: escritor (COPY a PostgreSQL) → cola en memoria
+      → worker de detección (costo simulado 2 ms por señal; reglas de temperatura,
+      puerta abierta en movimiento, exceso de velocidad). Marca duplicados y fuera de
+      orden por camión (ooo=1 dup, ooo=2 fuera de orden). Expone /metrics (backlog, lag).
+      PARTITIONS=24 táctica; PARTITIONS=1 base (una cola, un worker).
+  - generador: simula 18.000 camiones. Cada camión envía en orden y espera el acuse;
+      reintentos con backoff 100 ms→2 s, timeout 5 s por intento. Ráfagas de pánico
+      (prioridad sobre telemetría pendiente), pérdidas de cobertura (señales atrasadas).
+      Escribe gen.csv.gz (cada envío) y gen_summary.json.
+
+-------------------------------------------------------------------------------------
+4. VARIANTES: TÁCTICA VS. LÍNEA BASE
+-------------------------------------------------------------------------------------
+  EXP-1  táctica: acks=all + réplicas (RF=3) + commit después de guardar + heartbeat.
+         base:    acuse inmediato (antes de persistir), auto-commit, sin réplicas.
+  EXP-2/3 táctica: 24 particiones y 24 workers (1 por cola).
+         base:    1 cola, 1 worker.
+  Fallas EXP-1: SIGKILL a un receptor, a un despachador o a un broker en t = 60,5 s,
+         sincronizado con la ráfaga de pánicos. Heartbeat del orquestador detecta la
+         caída cada 1 s y relanza el contenedor.
+
+-------------------------------------------------------------------------------------
+5. CÓMO SE EJECUTA UNA CORRIDA (prototipo/orquestador/run.py)
+-------------------------------------------------------------------------------------
+  1. Estado limpio: docker compose down -v; se levanta la variante.
+  2. Configuración de Redpanda: write_caching_default=false,
+     enable_leader_balancer=false (y group_min_session_timeout_ms si sesión < 6 s).
+  3. Hilos de monitoreo: línea de tiempo cada 1 s (timeline.csv), docker stats,
+     heartbeat (detecta y relanza caídas; en EXP-1b no relanza).
+  4. Se lanza el generador; en EXP-1 se inyecta el SIGKILL en t = 60,5 s.
+  5. EXP-3: se espera a que el backlog sea ≤ 1500 sostenido 30 s
+     (mínimo 60 s de cola, máximo 600 s).
+  6. Verificación SQL + histogramas, export de tablas, logs, estado de Redpanda y
+     HAProxy; escribe done.json. El orquestador es reanudable.
+  Flags: --quick, --only EXP-n, --reps N, --results DIR, --extras.
+
+-------------------------------------------------------------------------------------
+6. CÓMO SE MIDEN Y VERIFICAN LOS RESULTADOS
+-------------------------------------------------------------------------------------
+  - Verdad de lo enviado: gen.csv.gz del generador (cada señal, si fue acusada).
+  - Verdad de lo guardado: tablas de PostgreSQL. Se cruzan por (truck_id, seq):
+      perdidas = acusadas/emitidas que no están en la BD
+      perdidas_panico, duplicados, perdidas_acusadas (acusadas al camión pero perdidas)
+  - Latencias desde histogramas (acuse, guardado, pánico guardado desde origen,
+    detección desde origen, detección en el pico).
+  - Fuera de orden: se usa la marca del worker (fuera_de_orden_worker); el cálculo
+    por timestamp se muestra aparte porque el reloj de la VM retrocede unos ms.
+  - analyze.py agrega por grupo, evalúa criterios y genera:
+    resultados/resumen.json, RESUMEN.md e informe.html.
+
+-------------------------------------------------------------------------------------
+7. PROBLEMAS ENCONTRADOS Y CORRECCIONES DURANTE LA NOCHE
+-------------------------------------------------------------------------------------
+  - Redpanda traía bypass de fsync activado (modo dev) → se DESACTIVÓ para que la
+    persistencia sea real.
+  - Pausas > 4 s al producir ("context deadline exceeded") por rebalanceo automático
+    de líderes → se desactivó enable_leader_balancer y se bajó MetadataMinAge a 250 ms.
+  - Las primeras corridas de EXP-1 mataban el componente fuera de la ráfaga de pánicos;
+    DIS-1 exige que se caiga "mientras procesa pánicos" → se reinició EXP-1 desde cero
+    con el SIGKILL sincronizado en plena ráfaga (las corridas viejas se apartaron y no
+    forman parte de los resultados).
+  - Criterio de fuera de orden cambiado a la marca del worker (ver sección 6).
+  - Mañana: las primeras extras coincidieron con una videollamada del usuario
+    (acuse p99 de 13 ms → 0,86 s, miles de reintentos) → se pararon, se apartaron
+    las 4 corridas contaminadas y se repitieron con el equipo libre.
+
+-------------------------------------------------------------------------------------
+8. RESULTADOS FINALES (50/50 corridas OK, terminadas 14-nov 05:07)
+-------------------------------------------------------------------------------------
+Duraciones reales: EXP-1 ≈ 1,6 h · EXP-2 ≈ 1,3 h · EXP-3 ≈ 2 h.
+
+EXP-1 (DIS-1) — 174.000 pánicos enviados con táctica (15 corridas con falla)
+  Falla         | Táctica              | Línea base
+  Despachador   | 0 pánicos perdidos   | 0 perdidos (128 duplicados)
+  Receptor      | 0 pánicos perdidos   | 30 pánicos y 645 señales acusadas perdidas;
+                |                      | peor repetición 99,914 % → NO CUMPLE
+  Broker        | 0 pánicos perdidos   | 0 perdidos
+  - Táctica con falla de broker: 2 señales de TELEMETRÍA acusadas se perdieron
+    (caso borde de Redpanda: error producer_state en el mismo ms del acuse; el high
+    watermark coincide con lo consumido). Ningún pánico afectado.
+  - Detección de la caída por el heartbeat: mediana 0,55 s.
+  - Latencia del pánico durante la falla (táctica): p99 ≈ 4,7 s (despachador) y
+    ≈ 3,9 s (broker) → lejos de la meta de 2 s (por la sesión de 6 s del grupo y la
+    elección de líder). Esto motivó EXP-1c.
+  - En la línea base, despachador y broker no perdieron porque el proceso se relanza
+    en ~1 s con su disco intacto. Esto motivó EXP-1b.
+  CONCLUSIÓN: se confirma la hipótesis; la pérdida de la base viene del acuse antes
+  de persistir.
+
+EXP-2 (LAT-1)
+  - Táctica: p99 de guardado 0,345 s, 0 pérdidas en 8,33 M señales, 1,98 % atrasadas.
+  - Base: p99 0,03 s, también cumple (un solo escritor = lotes más grandes).
+  - No discrimina entre variantes: guardar no es el cuello de botella con meta de 1 min.
+    El costo de la cola única aparece al procesar: detección en la base p99 ≈ 325 s.
+  CONCLUSIÓN: se cumple con holgura; las colas se justifican por LAT-2 (EXP-3).
+
+EXP-3 (LAT-2)
+  - Táctica: p99 de procesamiento en el pico 0,749 s (mediana de p99 por repetición
+    0,62 s), 0 fuera de orden, la cola vuelve a lo normal en 0,8–1,4 s tras el pico,
+    7,5 M señales del pico procesadas.
+  - Base: backlog de ~2,05 M señales, nunca se normaliza, solo 24 % del pico procesado
+    10 min después, p99 observado > 833 s → NO CUMPLE.
+  - Reparto por hash parejo entre las 24 colas (desviación ~3 %); cada camión siempre
+    en la misma cola. ~480 señales/s por worker → 24 colas ≈ 11.500 señales/s
+    (pico proyectado para 40.000 camiones, ESC-2).
+  CONCLUSIÓN: se confirma la hipótesis.
+
+-------------------------------------------------------------------------------------
+9. PRUEBAS EXTRA (mañana del 14-nov, 10:20–~11:45; 25 corridas)
+-------------------------------------------------------------------------------------
+No estaban en el plan original; se agregaron tras ver los resultados. Misma carga que
+EXP-1 (11.600 pánicos por corrida), 5 repeticiones.
+
+EXP-1b — "La máquina no vuelve": SIGKILL en plena ráfaga y el heartbeat detecta la
+caída pero NO relanza (pérdida de máquina con su disco). Solo sobreviven réplicas.
+  Pérdida de…   | Táctica (58.000 pánicos)        | Línea base (58.000 pánicos)
+  Despachador   | 0 pánicos perdidos (3 dup)      | 35.697 pánicos perdidos (~61 %)
+  Broker        | 0 pánicos perdidos              | 35.494 pánicos y 2.272.394
+                | (4 señales de telemetría, 659 dup) | señales perdidas
+  - Cifras muy estables entre repeticiones (~7.100 pánicos perdidos por corrida en base).
+  - Base pierde porque confirma el offset antes de guardar y no tiene réplicas.
+  - Nota: se corrió con el portátil en uso liviano; en 2 repeticiones el acuse p99
+    subió a ~0,6 s (13 ms en EXP-1) → latencias de EXP-1b indicativas; los conteos de
+    pérdida no dependen de eso.
+
+EXP-1c — Falla del despachador con sesión de 2 s y latido de 0,5 s (solo táctica).
+  - Resultados definitivos (5 de 5 reps, 58.000 pánicos): p99 del pánico guardado
+    desde el botón = 1,08 s (mediana de p99 por rep 1,19 s) vs. 4,73 s con sesión de
+    6 s; p99,9 1,93 s; máximo 2,06 s. 0 pánicos perdidos, 1 duplicado.
+    Detección de la caída: mediana 0,37 s.
+  - Muestra que con sesión corta la meta de 2 s de la diapositiva 2 se cumple en p99
+    (el máximo absoluto queda justo en el límite: 2,06 s).
+  - Cifras también en resultados/RESUMEN.md, resumen.json e informe.html.
+
+-------------------------------------------------------------------------------------
+10. DÓNDE ESTÁ CADA COSA
+-------------------------------------------------------------------------------------
+  (raíz del repositorio)
+    docs/PROCESO_Y_RESULTADOS.txt    este documento
+    prototipo/
+      docker-compose.yml             infraestructura completa
+      postgres/init.sql              esquema
+      haproxy/haproxy-3.cfg, -1.cfg  balanceador (3 o 1 receptor)
+      go/                            código Go (cmd/receptor, despachador, procesador,
+                                     generador; internal/common)
+      orquestador/run.py             ejecuta las corridas
+      orquestador/analyze.py         agrega y genera informe
+      orquestador/informe_plantilla.html
+    resultados/                      (~3,3 GB con datos crudos; ~135 MB sin ellos)
+      EXP-n/<escenario>/<variante>/repN/   por corrida:
+          gen.csv.gz, gen_summary.json, verificacion.json, done.json, events.json,
+          timeline.csv, docker_stats.jsonl, docker_inspect.json, haproxy_stats.csv,
+          redpanda_estado.json, metricas_*.json, histogramas/*.csv, tablas/, logs/
+      EXP-1b/, EXP-1c/               pruebas extra
+      resumen.json, RESUMEN.md       resumen agregado y criterios
+      informe.html                   informe completo (gráficos, stack, método, anomalías)
+      entorno.json                   entorno de ejecución
+      stdout.log, stdout_extras.log, orquestador.log
+
+  El informe completo (incluye EXP-1b y EXP-1c) está en resultados/informe.html.
+
+-------------------------------------------------------------------------------------
+11. AJUSTES RECOMENDADOS PARA LA PRESENTACIÓN
+-------------------------------------------------------------------------------------
+  - Corregir "2 repeticiones" → se usaron 5.
+  - Indicar el entorno: todo local en un solo Mac; cifras absolutas indicativas.
+  - Mencionar los cambios al plan (fsync real, sin rebalanceo de líderes, SIGKILL
+    sincronizado con la ráfaga, criterio de fuera de orden, pruebas extra).
+  - Tiempos reales: EXP-1 1,6 h, EXP-2 1,3 h, EXP-3 2 h (+ extras ~1,4 h).
+  - EXP-2: "se cumple con holgura; las colas se justifican por LAT-2".
+  - EXP-1: la meta de 2 s del pánico NO se cumple con sesión de 6 s (p99 ~4,7 s), pero
+    SÍ con sesión de 2 s (EXP-1c).
+  - EXP-1b es el argumento más fuerte a favor de las réplicas.
+
+-------------------------------------------------------------------------------------
+12. CÓMO VOLVER A CORRER TODO
+-------------------------------------------------------------------------------------
+  cd prototipo/orquestador
+  caffeinate -dimsu &                         # que el Mac no duerma
+  python3 -u run.py --reps 5                  # plan completo (~5 h)
+  python3 -u run.py --extras --reps 5         # EXP-1b y EXP-1c (~1,4 h)
+  python3 -W ignore analyze.py                # regenera resumen e informe
+  Recomendación: portátil conectado, sin videollamadas ni procesos pesados.
