@@ -1,0 +1,149 @@
+# Prototipo LogiSur Andina - Reto 4. El orquestador (orquestador/run.py) decide qué servicios levantar
+# y con qué variables según el experimento y la variante (táctica / línea base). Sin depends_on a
+# propósito: el orden de arranque lo controla el orquestador.
+name: lsa
+
+x-redpanda: &redpanda
+  image: redpandadata/redpanda:v24.2.7
+  restart: "no"
+
+x-app: &app
+  image: lsa-app:latest
+  restart: "no"
+
+x-appenv: &appenv
+  BROKERS: ${BROKERS:-redpanda-0:9092,redpanda-1:9092,redpanda-2:9092}
+  PG_DSN: postgres://lsa:lsa@postgres:5432/lsa
+  TEL_TOPIC: telemetria
+  PANIC_TOPIC: panicos
+  TEL_PARTITIONS: ${TEL_PARTITIONS:-24}
+  PANIC_PARTITIONS: ${PANIC_PARTITIONS:-3}
+  PANIC_LANE: ${PANIC_LANE:-1}
+  ACK_MODE: ${ACK_MODE:-replicated}
+
+services:
+  # ---------------- Canal durable: 3 brokers Redpanda (API Kafka) ----------------
+  redpanda-0:
+    <<: *redpanda
+    command:
+      - redpanda start
+      - --smp=1
+      - --memory=1G
+      - --reserve-memory=0M
+      - --overprovisioned
+      - --kafka-addr=internal://0.0.0.0:9092
+      - --advertise-kafka-addr=internal://redpanda-0:9092
+      - --rpc-addr=redpanda-0:33145
+      - --advertise-rpc-addr=redpanda-0:33145
+      - --default-log-level=warn
+      - --unsafe-bypass-fsync=false
+  redpanda-1:
+    <<: *redpanda
+    command:
+      - redpanda start
+      - --smp=1
+      - --memory=1G
+      - --reserve-memory=0M
+      - --overprovisioned
+      - --kafka-addr=internal://0.0.0.0:9092
+      - --advertise-kafka-addr=internal://redpanda-1:9092
+      - --rpc-addr=redpanda-1:33145
+      - --advertise-rpc-addr=redpanda-1:33145
+      - --seeds=redpanda-0:33145
+      - --default-log-level=warn
+      - --unsafe-bypass-fsync=false
+  redpanda-2:
+    <<: *redpanda
+    command:
+      - redpanda start
+      - --smp=1
+      - --memory=1G
+      - --reserve-memory=0M
+      - --overprovisioned
+      - --kafka-addr=internal://0.0.0.0:9092
+      - --advertise-kafka-addr=internal://redpanda-2:9092
+      - --rpc-addr=redpanda-2:33145
+      - --advertise-rpc-addr=redpanda-2:33145
+      - --seeds=redpanda-0:33145
+      - --default-log-level=warn
+      - --unsafe-bypass-fsync=false
+
+  # ---------------- Almacenamiento ----------------
+  postgres:
+    image: postgres:16-alpine
+    restart: "no"
+    environment:
+      POSTGRES_USER: lsa
+      POSTGRES_PASSWORD: lsa
+      POSTGRES_DB: lsa
+    command: ["postgres", "-c", "shared_buffers=512MB", "-c", "max_connections=200",
+              "-c", "max_wal_size=4GB", "-c", "checkpoint_timeout=15min", "-c", "wal_buffers=16MB"]
+    volumes:
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+  # ---------------- Recepción de señales (sin estado, activas/activas) ----------------
+  receptor-1:
+    <<: *app
+    command: ["receptor"]
+    environment: {<<: *appenv, INSTANCE: "1"}
+  receptor-2:
+    <<: *app
+    command: ["receptor"]
+    environment: {<<: *appenv, INSTANCE: "2"}
+  receptor-3:
+    <<: *app
+    command: ["receptor"]
+    environment: {<<: *appenv, INSTANCE: "3"}
+
+  # ---------------- Canal de pánicos: despachadores (grupo de consumidores) ----------------
+  despachador-1:
+    <<: *app
+    command: ["despachador"]
+    environment: {<<: *appenv, INSTANCE: "1", COMMIT_MODE: "${COMMIT_MODE:-after_write}", SESSION_TIMEOUT_MS: "${SESSION_TIMEOUT_MS:-6000}", HEARTBEAT_MS: "${HEARTBEAT_MS:-1000}"}
+  despachador-2:
+    <<: *app
+    command: ["despachador"]
+    environment: {<<: *appenv, INSTANCE: "2", COMMIT_MODE: "${COMMIT_MODE:-after_write}", SESSION_TIMEOUT_MS: "${SESSION_TIMEOUT_MS:-6000}", HEARTBEAT_MS: "${HEARTBEAT_MS:-1000}"}
+
+  # ---------------- Colas de telemetría: escritores + workers de detección ----------------
+  procesador:
+    <<: *app
+    command: ["procesador"]
+    environment: {<<: *appenv, PARTITIONS: "${TEL_PARTITIONS:-24}", DETECT_COST_US: "${DETECT_COST_US:-2000}"}
+    ports: ["127.0.0.1:8082:8082"]
+
+  # ---------------- Balanceador ----------------
+  haproxy:
+    image: haproxy:3.0-alpine
+    restart: "no"
+    volumes:
+      - ./haproxy/${HAPROXY_CFG:-haproxy-3.cfg}:/usr/local/etc/haproxy/haproxy.cfg:ro
+    ports: ["127.0.0.1:8404:8404"]
+    ulimits:
+      nofile: {soft: 200000, hard: 200000}
+
+  # ---------------- OBU simuladas ----------------
+  generador:
+    <<: *app
+    command: ["generador"]
+    environment:
+      TARGET: http://haproxy:8080/signal
+      TRUCKS: ${TRUCKS:-18000}
+      PROFILE: ${PROFILE:-60:1500,300:5000,30:1500}
+      TAIL_RATE: ${TAIL_RATE:-0}
+      TAIL_MAX_S: ${TAIL_MAX_S:-600}
+      PANIC_EVERY_S: ${PANIC_EVERY_S:-0}
+      PANIC_BURST: ${PANIC_BURST:-0}
+      PANIC_START_S: ${PANIC_START_S:-10}
+      PANIC_SPREAD_S: ${PANIC_SPREAD_S:-0}
+      OUTAGE_FRAC: ${OUTAGE_FRAC:-0}
+      OUTAGE_S: ${OUTAGE_S:-120}
+      OUTAGE_FROM_S: ${OUTAGE_FROM_S:-60}
+      OUTAGE_TO_S: ${OUTAGE_TO_S:-240}
+      DRAIN_MAX_S: ${DRAIN_MAX_S:-90}
+      OUT_DIR: /results
+    volumes:
+      - ${RUN_DIR:-./run}:/results
+    ports: ["127.0.0.1:9100:9100"]
+    ulimits:
+      nofile: {soft: 200000, hard: 200000}
